@@ -1,0 +1,555 @@
+---
+title: "Data Analysis of the Chocolate Comsumption in Germany"
+author: "Xin Tan, 583833"
+date: "2019/3/11"
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+```{r include=FALSE}
+# setwd and read the data----
+setwd("~/Desktop/DA2/Final_DA2")
+library(readxl)
+products.rating   <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "AttributeRatingsStacked")
+consumption       <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Gerneral Consumption")
+preference.rating <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Direct Preference Rating")
+attribute.rating   <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Attribute Rating")
+respondents       <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Social Demographic Questions")
+```
+
+# Introduction
+
+
+This report is structred by firstly demostrate the summery of the survey results. Then followed by the Exploratory Factor Analysis (EFA) to the attributes rating. the EFA helps reducing the complexity by reducing the number of dimensions in the data, which enable us to discover the potential factors to explain e.g. what might influence people's jugement about the chocolate bars. The perceptual Mapping generated based on the similarity matrix will visualize the relationship between the relationship of the attributes and the brands. 这个需要重新调整：Respondents will be clustered into two groups according to main attributes rating afterwards. At last, the interesting fingdings about the consumers and products would be discussed.
+
+
+
+
+# About the Questionnaire and the Dataset
+
+50 respondents from German were asked to complete the questionaire about the satisfaction and the consumption behavoiur of chocolate bars. The questionnaire covered 10 chocolate bar brands and 13 attributes for each brands. The respondents were required to answered 35 questions, which touch upon three main components: 
+
+插入表 Table 1. A Brief View of the Questionnaire.
+
+*  __Satisfaction of the chocolate brands and attributes__.50 respondents need to  evaluate both brands preference and attrinute preference by assigning the rating scores: In the brands rating, respondents are required to give a rating score between 1-7 for each of the ten brands. Whereas in the attribute rating, they need to evaluate the ten  brands together with the 13 attributes by rating from 1 - 5 (13*10 = 130 rating scores are supposed to be given).
+*  __Consumption behavior__ include e.g. when,why and how often they consumer a chocolate bars.
+*  __Demographic Questions__ consists of several private information about the respondents.
+
+这个数据集的问题：The main problem of this data set is small size with uneven distributed demographic variables, which limits the inference of the population. This data set would not suitable for studying e.g. whether having children is a significant reason to increase the probability of purchasing chocolate bars? Since there are only three respondents having children. 我要干的事情：However, with this data set, we can analyze some of the potential factors of consumer preferences by scoring each chocolate brand and its attributes by 50 respondents. And then cluster the respondents into different segments to see the characteristics of each cluster. This report focuses only on the application of the data analytical methods, e.g. factor analysis and cluster, neither the reasonability of the data collection as well as the design of the questionnaire , nor the data quality will not be discussed.
+
+
+
+
+## Data Prepararition
+
+The corresponding data store in the five table sheets:
+
+1. __AttributeRatingsStacked__ is the same table as the __Attribute Rating__, which has an inversed layout for research convenience. The datasets reflect consumer ratings of the ten chocolate bars with regard to the given thirteen attributes as expressed on survey items with the following form:
+• How do you think [Product] on the basis of the following [Attributes]?
+• Rating score is from 1 to 5. Where 1 is not preferred at all, 5 is greatly preferred. 
+
+2. In the __Direct Preference__, respondents ranked their preference only on the ten chocolate bars on survey items with the following form: 
+On a scale from 1 to 7—where 1 is least preferred and 7 is most preferred. 
+
+3. __General Consumption__ reports the consumption behavior of the respondents, which includes consumption frequency, purchase location, consumption circumstances and consumed brands.
+
+4. __Social Demographic Questions__ contains the basic personal information of the respondents.
+
+Consumption behavior investigation (Gerneral Consumption); And the
+basic information of the respondents (Social Demographic Questions)
+
+Except the __AttributeRatingsStacked__ / __Attribute Rating__ including missing value, the other three datasets appear to be clean and formatted appropriately.
+
+
+## Data clean
+
+### Before the imputation of missing data
+
+```{r}
+
+# average rating by person
+AvgRating_person<- aggregate(products.rating[,3:15],by=list(products.rating$Person),FUN=mean, na.rm=TRUE) # used for cluster
+
+# average rating by products
+AvgRating_products <- aggregate(products.rating[,3:15],by=list(products.rating$Product),FUN=mean, na.rm=TRUE) # mean
+AvgRating_products <- aggregate(products.rating[,3:15],by=list(products.rating$Product),FUN=median, na.rm=TRUE) # median
+
+
+
+
+# boxplot by colnums (attribute means)
+library(tidyverse)
+
+AvgRating_products%>%
+  #create new column and save the row.names in it
+  mutate(variable = row.names(.)) %>% 
+  #convert your data from wide to long 
+  tidyr::gather("var", "value", 2:14) %>%
+  #plot it using ggplot2
+  ggplot(., aes(x =  variable, y = value)) +
+  geom_boxplot()+
+  theme(axis.text.x = element_text(angle=35,hjust=1))
+
+
+# boxplot by row (products mean)
+tmp <- as.data.frame(t(AvgRating_products[,2:14]))
+boxplot(tmp)
+
+
+# imputate missing value by attribute of each brand (130 variables = 10 * 13)
+
+library(psych)
+before.NA<- describe(attribute.rating)
+
+```
+
+表Table 2. The Distribution of Missing Values Across Products and Attributes
+
+In total there are 6.4% missing inputs in the __AttributeRatingsStacked__ / __Attribute Rating__. Table 1 displays the exact 454 missing values with respect to products and attributes.
+
+* None of the products received a complete feedback when the evaluation of the products together with the attributes. Balisto (109) and Lion (108) include the most missing values, which are significantly more than the other products. Duoplo (21) has the least missing value.
+
+* Six attributes with the most missing values: rich (14% or 70 missing values), addiction (13% or 65), commercial (9.8% or 49), accessible (9.2% or 46), wrapping (8.8% or 44) and healthful (8% or 40). In these six attributes, half of the missing values are from the products Balisto, Lion and Bounty.
+
+The existing data shows the most popular attribute is sweet with the average rating score 4.5. almost all of the chocolate products got their highest rating on “sweet”. In contrast, the overall chocolate bars got their lowest score at “healthful”, on average is 1.7. The most popular chocolate bar is KinderRiegel (3.9), which even leads in six attributes (wrapping, image, commercial, addiction, handy and accessible). Then followed by Lion and Twix. The least popular chocolate bars are Balisto (3.5) and Bounty (3.5) and KinderBueno (3.6).
+
+### Imputation of Missing Data
+
+The dataset has been cleaned by imputing the missing values with corresponding attribute mean of each brand. Since after checking the distribution of each attribute rating scores with respect to the brands, the mean and median are very close. The rating scaler is limited within 1 to 5, outliers would have very small impact. Imputation the missing value with mean or median deliver almost the same distribution for of the attributes (only a slighlt impact on the calorie, rich and addiction).
+
+
+```{r}
+# 1. NA imputation ----
+dat <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "AttributeRatingsStacked")
+dat<-as.data.frame(dat)
+str(dat)
+bars<-dat
+summary(dat)
+
+
+aggregate(dat[,-c(1,2)], by=list(bars$Product),mean, na.rm=TRUE)
+
+library(data.table)
+# use data.table
+bars.dt = as.data.table(bars)
+# melt data.table to "long" format
+bars.dt.long = melt(bars.dt, id.vars = c("Person", "Product"), 
+                    variable.name = "Attribute", value.name = "Value") 
+
+str(bars.dt.long)
+head(bars.dt.long)
+
+# mean values for each attribute (by each product and attribute)----
+# 加了一列：每个product对应attribute的平均分.为之后一步做准备
+bars.dt.long[, Mean.by.prod.att := mean(Value, na.rm = TRUE), by = .(Product, Attribute)]
+head(bars.dt.long)
+
+
+# test
+# 每个product对应attribute的平均分[130*13]
+unique(bars.dt.long[, .(Product, Attribute, Mean.by.prod.att)])
+
+
+# impute NA----
+bars.dt.long[is.na(Value), Value := Mean.by.prod.att]
+bars.dt.2 = dcast(bars.dt.long, Person + Product ~ Attribute, value.var = "Value")
+
+head(bars.dt.2)
+summary(bars.dt.2)
+
+
+
+attribute <- bars.dt.2
+## attribute is the dataset to be used to do 'Reducing Data Complexity'. Cleaned!
+
+#### End of the NA imputation
+
+```
+
+
+
+# Respondents
+
+## Basic Information
+
+There are 29 women and 21 men have filled out a questionnaire. The average age are 26 years old (mean = median = mode). The youngest respondent is 18 years old, the oldest is 31 years old. Students and working people are almost half and half (25:23). Only two respondents have get married. For the non-married respondents, 36% are in a relationship and 56% are still single. 47 respondents have reported their family status, 44 do not have children. 50 respondents are from nine states of Germany. The majorityn of the respondents are from Berlin(38%), then followed by Sachsen-Anhalt(24%), Hessen(8%), Nordrhein-Westfalen(10%), Bayern(6%), Niedersachsen(6%), Sachsen(4%), Hamburg(2%) and Baden Württemberg(2%). 46 respondents live in the city and 4 live in a village. Above 80% respondents do exercise at least once a week, most respondents (58%) do sports 1-3 times per week. For these 50 respondents, students go to sport more often than working people(26:24), female go to exciese more often than male (29:21).
+
+```{r eval=FALSE, include=FALSE}
+# Sport frequency
+
+respondents <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Social Demographic Questions")
+table(respondents$`35. How often do you practice any kind of sport?`)/50
+table(respondents$`34. In which state of Germany do you live?`)/50
+
+xtabs(~ `28. What is your gender?` + `30. What is your main occupation?` + `35. How often do you practice any kind of sport?`, data = respondents)
+
+```
+
+
+
+## Consumption Behaviour
+
+__General Consumption__ reports the consumption behavior of the respondents, which includes consumption frequency, purchase location, consumption circumstances and consumed brands:
+
+```{r}
+
+#How often do you consume Chocolate Bars?
+table(consumption$`2. How often do you consume Chocolate Bars?`)/50
+
+# Plot
+apply(consumption, 2, FUN = table)
+tmp<-as.data.frame(table(consumption$`2. How often do you consume Chocolate Bars?`))
+library(ggplot2)
+library(viridis)
+ggplot(tmp, aes(x=Var1,y=Freq)) + geom_bar(stat="identity", width=.4) + 
+  coord_flip() + labs(y="Count", x="Frequency")+
+  theme(text = element_text(size=20))
+
+# Under which circumstances do you consume Chocolate Bars?
+
+library(stringr)
+str_count(consumption, "driving")
+
+
+```
+### How often do you consume Chocolate Bars?
+78% respondents consume chocolate bar at least once a week. Only one respondent never consumes any chocolate bars.
+
+
+### Where can you find yourself buying Chocolate Bars?
+Supermarket is the most popular place to buy chocolate bars. One quarter of the respondents only go to supermarket to buy chocolate bars. 66% (33/50) respondents purchase chocolate bar at more than one places. The second and the third most frequently places that to buy chocolate bars are cafeteria and kiosk. Quite few people buy chocolate bars at drug store or chocolate only shops like Ritter sport Shop.
+
+
+### Under which circumstances do you consume Chocolate Bars?
+Same as the above question about where do people buy chocolate bars, here the reason of consuming chocolate bars is also not unique for the most respondents. 74% respondents would like to eat chocolate bars under more than one circumstance. The most common reasons for consuming chocolate are:
+
+• Being hungry (50% respondents)
+• Under pressure (46%)
+• Travelling or driving (44%)
+• Watching TV (42%)
+• As a treat (42%) 
+• As dessert (40%)
+
+
+### Which of the following Chocolate Bars have you ever consumed? (Brandcount)
+The questionnaire lists the 13 chocolate-bar-brands. In this part, consumers need to select out the chocolate brands they have ever consumed and then give their evaluation to each chocolate brands as well as the corresponding attributes in the next part. There are three levels of chocolate according to the popularity of the chocolate bars, which measured by the total number of the chocolate bars selected by the respondents.
+
+1.  Most Popular. Most completed evaluation from respondents are is Duplo(50). 
+2.  Very Popular: Snikers, Twix, KitKat, KinderRiegel and Mars.
+3.  Well known: Bounty, Lion and Balisto.
+4.  Least Popular: KinderBueno.
+
+```{r include=FALSE}
+# 表consumption behaviour----
+
+
+# overview
+tmp <- as.data.frame(table(consumption$`4. Where can you find yourself buying Chocolate Bars?`))
+
+
+# selelct under specific conditions
+library(data.table)
+
+
+# include supermarket
+supermarket <- consumption[consumption$`4. Where can you find yourself buying Chocolate Bars?` %like% "supermarket",]
+## 40. just go to supermarkets are 12.
+
+cafeteria <- consumption[consumption$`4. Where can you find yourself buying Chocolate Bars?` %like% "cafeteria",]
+## 20, only cafeteria are 3
+
+vending.machine <- consumption[consumption$`4. Where can you find yourself buying Chocolate Bars?` %like% "vending machine",]
+## 16, only vending.machine are 1
+
+drug.store <- consumption[consumption$`4. Where can you find yourself buying Chocolate Bars?` %like% "drug store",]
+## 7. only drug store are 0
+
+gas.station <- consumption[consumption$`4. Where can you find yourself buying Chocolate Bars?` %like% "gas station",]
+## 15. only gas.station are 1
+
+kiosk <- consumption[consumption$`4. Where can you find yourself buying Chocolate Bars?` %like% "kiosk",]
+## 17. only kiosk are 0
+
+Chocolate.Shop <- consumption[consumption$`4. Where can you find yourself buying Chocolate Bars?` %like% "Rittersport",]
+
+# Plot places to buy chocolate bars----
+# a. create a dataframe
+
+tmp <-c(dim(supermarket)[1],dim(cafeteria)[1],dim(vending.machine)[1],
+        dim(kiosk)[1],dim(gas.station)[1], dim(drug.store)[1], dim(Chocolate.Shop)[1])
+
+place <- data.frame(c("Supermarket","Cafeteria","Vending Machine","Kiosk", "Gas station", "Drug store", "Chocolate Shop"), tmp)
+
+colnames(place) <- c("Where to buy chocolate bars","Number of respondents") # use brand for the row names
+
+
+# b. plot
+
+
+place$`Where to buy chocolate bars` <- factor(place$`Where to buy chocolate bars`, levels = unique(place$`Where to buy chocolate bars`[order(place$`Number of respondents`)]))
+
+library(ggplot2)
+library(viridis)
+ggplot(place, aes(x=`Where to buy chocolate bars`,y=`Number of respondents`)) + geom_bar(stat="identity", width=.5) + 
+  coord_flip() + labs(y="Count", x="Places")+
+  theme(text = element_text(size=20))
+
+
+
+
+#  consumption Reasons----
+
+
+# overview
+tmp <- as.data.frame(table(consumption$`5. Under which circumstances do you consume Chocolate Bars?`))
+
+# segment analysis
+dessert <-consumption[consumption$`5. Under which circumstances do you consume Chocolate Bars?` %like% "dessert",]
+# 20
+hungry <- consumption[consumption$`5. Under which circumstances do you consume Chocolate Bars?` %like% "hungry",]
+# 25
+treat <- consumption[consumption$`5. Under which circumstances do you consume Chocolate Bars?` %like% "treat",]
+# 21
+pressure <- consumption[consumption$`5. Under which circumstances do you consume Chocolate Bars?` %like% "pressure",]
+# 23
+travelling <- consumption[consumption$`5. Under which circumstances do you consume Chocolate Bars?` %like% "travelling",]
+# 22
+TV <- consumption[consumption$`5. Under which circumstances do you consume Chocolate Bars?` %like% "TV",]
+# 21
+
+
+
+# ever consumed----
+table(consumption$`7. Which of the following Chocolate Bars have you ever consumed?`)
+# 34 people: Snickers, Kinder Bueno, Twix, Mars, KitKat, Bounty, Kinderriegel, Balisto Korn-Mix, Lion, Duplo
+
+
+# 邱 consumed products-----
+name <- as.vector(c("Balisto","Bounty","Duplo","KinderBueno", "KinderRiegel", "KitKat","Lion","Mars", "Snickers","Twix"))
+nametmp <- vector(length = length(name))
+for (i in 1:length(name)){
+  nametmp[i] <- sum(consumption$`7. Which of the following Chocolate Bars have you ever consumed?` %like% name[i])
+}
+
+nametmp <- vector(length = length(name))
+for (i in 1:length(name))
+  nametmp[i] <- sum( grepl(name[i], unlist(consumption[,5])) )
+               
+brandcount <- data.frame(Product = name, Count = nametmp)
+
+```
+
+
+
+
+# Satisfaction of the chocolate brands and attributes
+
+### 比较受欢迎的牌子、口味。每个牌子比较擅长或者受认可的attribute.(the products' mean)
+
+* __The most favored chocolate bars' brands__
+
+1. Kinderriegel (5.9)
+2. Snickers (5.5)
+3. KinderBueno(5.4)
+4. Twix (5.2)
+5. KitKat (5.0)
+6. Duplo (4.6) 
+7. Lion (4.5)
+8. BalistoKornMix(4.3)
+9. Bounty(4.0)
+10.Mars (3.9)
+            
+                                                                
+```{r}
+
+# brands mean
+
+apply(preference.rating[,2:11], 2, mean)
+
+
+
+# calculate the products' mean----
+
+## What is the average (mean) position of the chocolat bars on each attribute.sc?
+products.mean <- aggregate(.~Product, data = attribute, mean)
+
+rownames(products.mean ) <- products.mean [, 1] # use brand for the row names
+products.mean  <- products.mean [, -c(1,2)] # remove brand name column
+products.mean
+
+
+
+
+# Heatmap of the mean score of each attribute.sc by product---- 
+library(gplots)
+library(RColorBrewer)
+heatmap.2(as.matrix(products.mean),
+        col=brewer.pal(9, "GnBu"), trace="none", key=FALSE, dend="none",
+         main="Attributes-Brands Mean Score Heatmap")
+#write.csv(products.mean, file = "Products mean.csv")
+
+x <- as.matrix(products.mean)
+color.palette  <- colorRampPalette(c("#F8F8F8","yellow", "orange", "red"))
+
+
+
+heatmap.2(x,col=color.palette,margins=c(8,8),cexRow=1.4,cexCol = 1.4)
+
+## visulized table shows which chocolate bar is specialied at which attribute
+
+########End of Cluster/ Heatmap
+
+```
+
+```{r}
+
+# boxplot by colnums (attribute)
+library(reshape2)
+library(ggplot2)
+x <- attribute[,c(2:15)]
+x <- as.data.frame(x)
+x <- melt(x)
+
+plt <- ggplot(data =x , aes(x = variable, y = value))
+plt + geom_boxplot()  +theme_minimal() + labs(x = "Attribute", y = "Rating Distribution") + ggtitle("Distribution after the Imputation of the Missing Values")
+
+
+```
+
+
+If we looking at the attributes, we can see respondents on average tend to give high rating scores on "sweet","calorie", "accessible" and "handy", which indicate in general, chocolate bars are with these attributes. In general, people do not think chocolate bars are healthy. 
+
+Table. Attribute Mean Scores
+
+* __Brands with the most complete products lines__ Here, the Brands with highest average mean scores are : KinderRiegel(3.9),Snickers(3.7), Twix(3.7) and Duplo(3.7). These brands have relative complete products line which offer chocolate bars with different oriented attributes or combination of different attributes.
+
+* __People's perception of chocolate bars__ The Attributes with highest average mean scores are: sweet(4.5), calorie(4.4) and accessible(4.1). Considering the brands of various chocolate bars, a high score indicates when people think about chocolate bars, these are the most common attributes one should have.
+
+The heatmap visulize which brands is good at making chocolate bars with what kind of attributes? (the darker of the color, the higher of the average rating score) e.g. Balisto is the only chaoclate bar earns a relative higher score in healthful attribute.
+
+
+### Correlation of the attribute
+
+Is there any relationship among attributes?
+```{r}
+library("PerformanceAnalytics")
+my_data <- products.mean[, 1:13]
+chart.Correlation(my_data, histogram=TRUE, pch=19)
+
+
+```
+
+In the above plot:
+
+The distribution of each variable is shown on the diagonal.
+On the bottom of the diagonal : the bivariate scatter plots with a fitted line are displayed
+On the top of the diagonal : the value of the correlation plus the significance level as stars
+Each significance level is associated to a symbol : p-values(0, 0.001, 0.01, 0.05, 0.1, 1) <=> symbols(“***”, “**”, “*”, “.”, " “)
+
+Some findings in the correlation matrix:
+* Both commercial and accessible are significantly positive corralted with image
+* Creamy is positive correlated with sweet, but negative correlated with crunchy.
+* Healthy is negative correlated with sweet and calorie.
+* Healthful and accessible are negative correlated. Why? 
+打分倾向可以放这里说？
+
+
+
+不同品牌巧克力在不同attributes上的投影看程度。mds
+
+
+# 透过打分看消费者哪些Attribute会影响评价。既大家看中的点什么。找出潜在因素。-> 因子分析
+
+# 利用几个重要的影响因素对消费者进行归类，主要为了看怎么样的人，或是什么情况下，消费者会消费什么产品。
+- 性别对偏好是否有影响？
+- 年龄对偏好
+- 学生和非学生会不会存在学生更喜欢吃（看书，休息，补充能量）
+- 消费频率对口味和牌子？
+- Sport与巧克力的消费
+
+
+
+
+
+
+
+Mean Score for male and female
+```{r}
+
+# Mean Score for male and female
+# 3.0 Data Preparation----
+library(readxl)
+library(MASS)
+setwd("~/Desktop/CACI/Special Work Performances/SWP 1+2/SWP2")
+
+dat  <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "AttributeRatingsStacked")
+dat<-as.data.frame(dat)
+bars<-dat
+str(dat)
+
+library(data.table)
+# use data.table
+bars.dt = as.data.table(bars)
+# melt data.table to "long" format
+bars.dt.long = melt(bars.dt, id.vars = c("Person", "Product"), 
+                    variable.name = "Attribute", value.name = "Value")
+str(bars.dt.long)
+# mean values for each attribute (by each product and attribute)
+bars.dt.long[, Mean.by.prod.att := mean(Value, na.rm = TRUE), by = .(Product, Attribute)]
+head(bars.dt.long)
+# test
+unique(bars.dt.long[, .(Product, Attribute, Mean.by.prod.att)])
+
+
+# impute
+bars.dt.long[is.na(Value), Value := Mean.by.prod.att]
+
+
+
+
+bars.dt.2 = dcast(bars.dt.long, Person + Product ~ Attribute, value.var = "Value")
+
+str(bars.dt.2)
+bars<-bars.dt.2
+
+str(bars)
+
+socio<-read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Social Demographic Questions")
+socio<-as.data.frame(socio)
+
+str(socio)
+library(plyr)
+socio<-rename(socio,c("28. What is your gender?"="Gender"))
+
+
+bars<-merge(bars,socio,by="Person")
+str(bars)
+
+bars.gender<-aggregate(bars[,-c(1,2,16:23)], by=list(bars$Product,bars$Gender),mean, na.rm=TRUE)
+str(bars.gender)
+
+
+```
+
+
+```{r eval=FALSE, include=FALSE}
+
+brand
+p<- dim(brand[brand$`Snickers (b1)` >=5,])[1]/50
+
+s <- sqrt(p*(1-p)/50)
+p+2.02*s
+p-2.02*s
+# 如果对snikcer的打分超过5分，就认为是喜欢。那么有95%的可能性，snicker的市场受欢迎率在[71% 93%]之间
+```
+
+计算出率后（占比多少的人喜欢什么）还要计算sd和ci
+sd = sqrt(10%(1-10%))/总调查人数， t_0.05 = 2.02
+95%CI = 10% ± 2.02*sd. Interpretation: 如果用样本的喜欢率10%来估计总体时，那么有95%的可能在 10% ± 2.02sd 之间，ci 越接近10%越可靠。
+
+*交叉分析* 是年龄、性别对“xx活动的喜爱”但个变量之间的关系。如果不分类统计，那么喜欢率是10%。 交叉分析后可能会发现不同年龄段，不同性别的喜好是不一样的。
+
+
+

@@ -1,0 +1,331 @@
+---
+title: "2. Factor Analysis"
+author: "Xin Tan, 583833"
+date: "2019/3/11"
+output:
+  word_document: default
+  pdf_document: default
+---
+
+```{r include=FALSE}
+# setwd and read the data----
+setwd("~/Desktop/DA2/Final_DA2")
+library(readxl)
+products.rating   <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "AttributeRatingsStacked")
+consumption       <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Gerneral Consumption")
+preference.rating <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Direct Preference Rating")
+attribute.rating   <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Attribute Rating")
+respondents       <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Social Demographic Questions")
+```
+
+
+```{r}
+# 1. NA imputation ----
+dat <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "AttributeRatingsStacked")
+dat<-as.data.frame(dat)
+str(dat)
+bars<-dat
+summary(dat)
+
+
+aggregate(dat[,-c(1,2)], by=list(bars$Product),mean, na.rm=TRUE)
+
+library(data.table)
+# use data.table
+bars.dt = as.data.table(bars)
+# melt data.table to "long" format
+bars.dt.long = melt(bars.dt, id.vars = c("Person", "Product"), 
+                    variable.name = "Attribute", value.name = "Value") 
+
+str(bars.dt.long)
+head(bars.dt.long)
+
+# mean values for each attribute (by each product and attribute)----
+# 加了一列：每个product对应attribute的平均分.为之后一步做准备
+bars.dt.long[, Mean.by.prod.att := mean(Value, na.rm = TRUE), by = .(Product, Attribute)]
+head(bars.dt.long)
+
+
+# test
+# 每个product对应attribute的平均分[130*13]
+unique(bars.dt.long[, .(Product, Attribute, Mean.by.prod.att)])
+
+
+# impute NA----
+bars.dt.long[is.na(Value), Value := Mean.by.prod.att]
+bars.dt.2 = dcast(bars.dt.long, Person + Product ~ Attribute, value.var = "Value")
+
+head(bars.dt.2)
+summary(bars.dt.2)
+
+
+
+attribute <- bars.dt.2
+## attribute is the dataset to be used to do 'Reducing Data Complexity'. Cleaned!
+
+#### End of the NA imputation
+
+
+
+# bars.gender
+socio<-read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Social Demographic Questions")
+socio<-as.data.frame(socio)
+
+str(socio)
+library(plyr)
+socio<-rename(socio,c("28. What is your gender?"="Gender"))
+
+
+bars<-merge(bars,socio,by="Person")
+str(bars)
+
+bars.gender<-aggregate(bars[,-c(1,2,16:23)], by=list(bars$Product,bars$Gender),mean, na.rm=TRUE)
+str(bars.gender)
+
+
+```
+
+
+need to run part 1 before run the following code
+
+## 1. calculate euclidian distances
+No need to rescaling the Data, otherwise problems might arise as calculating the Euclidean distance
+
+```{r}
+
+setwd("~/Desktop/DA2/Final_DA2")
+products.mean <- aggregate(.~Product, data = attribute, mean)
+
+rownames(products.mean ) <- products.mean [, 1] # use brand for the row names
+products.mean  <- products.mean [, -c(1,2)] # remove brand name column
+products.mean
+
+# 表similarity matrix/ calculate euclidian distances----
+
+products.dist <- dist(products.mean) # 算得是均值的Euclidean distance
+products.dist
+sm<-as.matrix(products.dist)
+write.csv(sm, file = "DistanceMatrix.csv")
+
+summary(products.dist)
+boxplot(products.dist)
+
+library("psych")
+describe(products.dist)
+
+```
+
+
+
+## 2.Suitability of factor analysis
+Assumption: the model assumes that some factors linearly influence the observed model.Check beforehand:
+
+* inverse correlation matrix
+* Anti-image matrix
+* Kaiser-Meyer-Olkin-Criteria
+* Bartlett’s test of sphericity
+
+Check afterwards
+
+* communalities h2
+* reproduced correlation matrix R_hat
+
+Factor analysis is based on a covariance matrix between variables. In other words, the candidate variables must have a certain correlation. If there is no correlation between the variables, or the correlation is small, the factor analysis will not be a suitable analysis method. The Kaiser-Meyer-Olkin measure of sampling adequacy allows us to know, whether this dataset is suitable for the degree of factor analysis? 
+
+```{r}
+# Check beforehand
+
+library("psych")
+library("lattice")
+
+
+names(attribute)
+
+# inverse and partial correlations
+
+p  <- solve(cor(attribute[,3:15], use="complete.obs"))
+levelplot(p, main="Inverse & partial correlations")
+
+
+# anti-image
+pr <- -p/sqrt(outer(diag(p), diag(p)))
+levelplot(pr, main="Anti-Image correlation")
+
+
+# Kaiser-Meyer-Olkin & MSA
+KMO(attribute[,3:15])
+KMO(bars.gender[,3:15])
+
+##KMO检验的数值变化从0——1，一般来说，KMO大于0.9适合作因子分析，若国小，表明变量偶对之间的相关不能被其他变量解释，进行因子分析不合适。KMO的值为0.7时为“还好’,0.6时为”中等”，0，5时就为“糟糕”了。本例中为近似0.7，表示还可以做因子分析。
+
+# Bartlett test of sphericity
+cortest.bartlett(attribute[,3:15])
+## wiki: Bartlett's test (see Snedecor and Cochran, 1989) is used to test if k samples are from populations with equal variances. Equal variances across populations is called homoscedasticity or homogeneity of variances. Some statistical tests, for example the analysis of variance, assume that variances are equal across groups or samples. The Bartlett test can be used to verify that assumption.
+
+
+## Bartlett检验的目的是确定所要求的数据是否曲子多元正态分布的总体，若差异检验的F值显著，表示索取数据来自正态分布，可以做进一步的分析。你给的结果中，sig显著，表示数据取自正态分布，很适合做因子分析。
+
+```
+
+
+
+```{r}
+# 几种不同的因子分析解释度。我应该会用ml
+
+library("psych")
+scree(attribute[,3:15])
+# principal component extraction
+principal(attribute[,3:15], nfactors=4, rotate="none")
+# principal axis extraction
+fa(attribute[,3:15], nfactors=4, rotate="none", fm="pa")
+# maximum likelihood extraction
+fa(attribute[,3:15], nfactors=4, rotate="none", fm="ml")
+# unweighted least squares extraction
+fa(attribute[,3:15], nfactors=4, rotate="none")
+
+# ML with Kaiser normalization
+factanal(attribute[,3:15], factors=4)
+
+
+#eigen(cor(attribute[,3:15]))
+n <- princomp(bars.gender[,3:15])
+n <- princomp(attribute[,3:15])
+
+summary(n)
+
+plot(n,type = "l", main = "The Scree Plot")
+scree(attribute[,3:15])
+
+```
+ The proportion of variance decreases as the number of the components increase, so here I would choose 4 components
+
+
+## 3. How many factors to choose? large increase of explained variance in at least two or three items
+
+
+DA2 Parallel analysis of Horn
+根据Horn, 选择4个component比较合适，
+
+```{r}
+
+
+## 可用/ Test/ DA2 Parallel analysis of Horn ----
+library("foreign")
+library("paran")
+x <-attribute[,-c(1,2)]
+paran(x, centile=95, all=T, graph=T)
+library("psych")
+fa.parallel(x, fa="fa") #用这个
+## 根据Horn, 选择4个component比较合适，不过课堂上老师认为3个比较好
+## Adjusted eigenvalues > 1 indicate dimensions to retain. (4 components retained)
+
+###  End of the Test DA2 Parallel analysis of Horn
+
+
+
+```
+
+
+```{r fig.height=15, fig.width=15}
+
+# correlation matrix by gender
+library(psych)
+tmp <- bars.gender[,3:15]
+
+par(mfrow = c(2,1))
+options(digits=2)
+female <- cov(bars.gender[1:10,3:15])
+cor.plot(female)
+male <- cov(bars.gender[11:20,3:15])
+cor.plot(male)
+
+```
+
+## 4. EFA Rotation
+```{r}
+library("psych")
+
+# ML with Kaiser normalization
+factanal(attribute[,3:15], factors=4, rotation = "varimax")
+
+
+
+# oblimin rotation without Kaiser normalization
+fa1 <- fa(attribute[,3:15], nfactors=3)
+fa1
+# apply Kaiser normalization 
+fa2 <- fa(attribute[,3:15], nfactors=3, rotate="none")
+fa2 <- kaiser(fa2)
+fa2
+# compare loading sets (vector cosines)
+factor.congruence(fa1, fa2)
+
+```
+
+
+## 5. EFA Scores
+```{r}
+library("psych")
+
+# ML with Kaiser normalization
+fa1 <-factanal(attribute[,3:15], factors=3, scores="regression")
+head(fa1$scores)
+# oblimin rotation without Kaiser normalization
+fa2 <- fa(attribute[,3:15], nfactors=4)
+head(fa2$scores)
+# compare scores
+cor(fa1$scores, fa2$scores)
+
+```
+
+
+
+```{r}
+# caci 的
+a.fa.gender<-fa(attribute[,3:15],fm="ml", max.iter=1000,SMC=TRUE,scores='Anderson',nfactors=4, rotate ="varimax")
+a.fa.gender
+
+EFA <-print(fa(attribute[,3:15], fm="ml", nfactors =4, scores='Anderson',rotate ="varimax")$ loadings ,cut =0.3)
+fa.diagram(EFA, simple = TRUE)
+
+
+# In this case, we will select oblique rotation (rotate = “oblimin”) as we believe that there is correlation in the factors. Note that Varimax rotation is used under the assumption that the factors are completely uncorrelated. We will use `Ordinary Least Squared/Minres` factoring (fm = “minres”), as it is known to provide results similar to `Maximum Likelihood` without assuming multivariate normal distribution and derives solutions through iterative eigendecomposition like principal axis.
+fourfactor <- fa(x,nfactors = 4,rotate = "oblimin",scores='Anderson')
+fourfactor
+print(fourfactor$loadings, cutoff = 0.3)
+
+
+
+
+
+# • 不要性别
+EFAscore<- aggregate(a.fa.gender$scores[,1:2], by=list(bars.gender$Group.1) ,mean)
+colnames(EFAscore)[1] <- c("Product")
+EFAscore
+
+# ••••最后efa图/ test----
+EFAscore<- aggregate(a.fa.gender$scores[,1:2], by=list(bars.gender$Group.1) ,mean);EFAscore
+plot(EFAscore$ML2,EFAscore$ML4, ylim = c(-2, 2), xlim = c(-2, 2),
+     xlab = "ML2", ylab = "ML4",pch = 19,
+     main  = "EFA Scores")
+text(EFAscore$ML2,EFAscore$ML4, labels = EFAscore$Group.1, cex = 1, pos = 4) # label the value
+## type="n") tells R not to plot symbols. 
+## Instead, we add the brand labels to the plot with text(x, labels).
+abline(h = 0, v = 0, col = "grey")
+
+# Test 完
+
+#• 前两个factor
+plot(EFAscore$ML2,EFAscore$ML4, xlab = "Factor 1", ylab = "Fator 2", main = "EFAscore",
+     pch = 19, ylim = c(-5.5, 5.5), xlim = c(-5.5, 5.5))
+text(EFAscore$ML2,EFAscore$ML4, labels = EFAscore$Product, cex = 1, pos = 4)
+abline(h = 0, v = 0, col = "grey")
+
+# • attribute 前两个的plot
+factor.plot(a.fa.gender$loadings[,c("ML2", "ML4")], labels=rownames(a.fa.gender$loadings))
+
+write.csv(EFAscore, file = "EFAscore")
+## Test图/ EFA_ ml orthogonal rotation----
+
+
+```

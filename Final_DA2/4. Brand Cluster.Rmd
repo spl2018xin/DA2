@@ -1,0 +1,44 @@
+---
+title: "Brand Cluster"
+author: "Xin Tan, 583833"
+date: "2019/3/11"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# prepare for the brand table
+brand.rating <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Direct Preference Rating")# use directly
+
+
+# h-cluster
+# suggest 2
+NbClust(brand.rating[-c(1)], method="ward.D2", index="ch") 
+
+library(cluster)
+d <- dist(brand.rating[-c(1)])
+tmp.cluster <-hclust(d, method = "ward.D2") 
+
+{plot(as.dendrogram(tmp.cluster),main = "Ward Cluster Dendrogram", horiz = FALSE)
+rect.hclust(tmp.cluster , k = 3, border = "red")}
+
+
+```
+
+
+```{r}
+
+# suggest 2
+NbClust(brand.rating[-c(1)], method="kmeans", index="ch") 
+
+seg.k <- kmeans(brand.rating[-c(1)] , centers= 2)
+brand.rating$kmeans <- seg.k$cluster
+clusplot(brand.rating[-c(1)], seg.k$cluster, color=TRUE, shade=TRUE,labels= , lines=0, main="K-means cluster")
+
+
+table(seg.k$cluster)
+table(seg.k$cluster)/50
+
+
+```
+
+
