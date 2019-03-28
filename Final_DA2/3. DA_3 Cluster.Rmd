@@ -3,21 +3,74 @@ title: "3. DA_Cluster"
 author: "Xin Tan, 583833"
 date: "2019/3/11"
 output:
+  word_document: default
   html_document:
     df_print: paged
 ---
 
+
+```{r eval=FALSE, include=FALSE}
+# Test 1
+library(readxl)
+dat <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "AttributeRatingsStacked")
+dat<-as.data.frame(dat)
+
+
+dat[is.na(dat)] <- 0
+
+attribute.rating<- aggregate(dat[,-c(1,2)], by=list(dat$Person),mean, na.rm=F) 
+#attribute.rating[is.na(attribute.rating)] <- 0
+colnames(attribute.rating)[1] <- "Person"
+
+
+
+# Test 2 4 attribute
+
+library(psych)
+apply(dat,2,sd)
+# replace with 0。表示考虑na时的方差。用这个。
+# Calorie,rich,healthful,sweet -> rich (1.563614)
+# Commercial, image, chocolaty -> commercial (1.569881)
+# Creamy, crunchy, addiction, wrapping -> addiction (1.524589)
+# Accessible, handy -> accessible (1.427612)
+
+# remove Na. 这个表示不考虑na的时候已有数据的方差。
+apply(dat,2,sd,na.rm=T)
+# Calorie,rich,healthful,sweet -> rich (1.0659400)
+# Commercial, image, chocolaty -> commercial (1.1571558 )
+# Creamy, crunchy, addiction, wrapping -> crunchy(1.3878090)
+# Accessible, handy -> handy (0.8890739)
+
+# 构建数据集
+
+
+# by mean
+library(readxl)
+dat <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "AttributeRatingsStacked")
+dat<-as.data.frame(dat)
+dat[is.na(dat)] <- 0
+
+dat<- dat[c("Person","Product","rich","commercial","addiction","accessible","crunchy","creamy")]
+attribute.rating<- aggregate(dat[,-c(1,2)], by=list(dat$Person),mean, na.rm=T)
+colnames(attribute.rating)[1] <- "Person"
+
+
+
+
+```
 
 
 In the cluster, NA means the respondents have no experence about the rating objective, which should not be imputate with another number, otherwise we will lose this important information. Here I will replace the NA with zero, on the  one hand, the information has been kept, on the other hand, the orienginal scale and the distribution of data is not influenced too much.
 
 ```{r}
 
-# prepare for the attribute table
+# prepare for the attribute table 结果虽好，但有问题：一旦有个没填，整个attribute都是0
+library(readxl)
 dat <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "AttributeRatingsStacked")
 dat<-as.data.frame(dat)
 
-attribute.rating<- aggregate(dat[,-c(1,2)], by=list(dat$Person),mean, na.rm=F)
+# attribute.rating<- aggregate(dat[,-c(1,2)], by=list(dat$Person),mean, na.rm=F)
+attribute.rating<- aggregate(dat[,-c(1,2)], by=list(dat$Person),mean, na.rm=T)
 attribute.rating[is.na(attribute.rating)] <- 0
 colnames(attribute.rating)[1] <- "Person"
 
@@ -28,29 +81,42 @@ colnames(attribute.rating)[1] <- "Person"
 
 
 # Cluster only use attribute
-```{r}
+```{r eval=FALSE, fig.height=15, fig.width=15, include=FALSE}
+# Calinski and Harabasz (suggest 2 cluster)
+library("NbClust")
 
-H-cluster
+NbClust(attribute.rating[-1], method="complete")
+NbClust(attribute.rating[-1], method="ward.D2")
+NbClust(attribute.rating[-1], method="kmeans")
+
+
+
+
+#H-cluster
 library(cluster)
 d <- dist(attribute.rating[-c(1)])
-tmp.cluster <-hclust(dist.df, method = "ward.D2") 
-
-{plot(as.dendrogram(tmp.cluster),main = "Ward Cluster Dendrogram", horiz = FALSE)
-rect.hclust(tmp.cluster , k = 3, border = "red")}
+tmp.cluster <-hclust(d, method = "complete") 
+tmp.cluster <-hclust(d, method = "ward.D2") 
 
 
+plot(as.dendrogram(tmp.cluster),main = "Ward Cluster Dendrogram", horiz = FALSE)
+rect.hclust(tmp.cluster , k = 3, border = "red")
 
+```
+
+
+```{r}
 
 # Silhouette of H-cluster (2 clusters is better)
 cl1  <- hclust(d, method="ward.D2")
-memb2 <- cutree(cl1, 2)
+memb2 <- cutree(cl1, 4)
 memb3 <- cutree(cl1, 3)
 #
 library("cluster")
 par(mfcol=c(2,2))
 plot(attribute.rating, col=memb2)
 s2 <- silhouette(memb2, d)
-plot(s2, col=1:2, border=NA)
+plot(s2, col=1:4, border=NA)
 plot(attribute.rating, col=memb3)
 s3 <- silhouette(memb3, d)
 plot(s3, col=1:3, border=NA)
@@ -59,7 +125,7 @@ plot(s3, col=1:3, border=NA)
 
 
 # h-cluster visualization
-cl1  <- hclust(d, method="ward.D2")
+cl1  <- hclust(d, method="complete")
 memb2 <- cutree(cl1, 2)
 memb3 <- cutree(cl1, 3)
 #
@@ -68,9 +134,6 @@ par(mfcol=c(1,2))
 clusplot(attribute.rating, memb2, col.p=memb2)
 clusplot(attribute.rating, memb3, col.p=memb3)
 
-
-# Calinski and Harabasz (suggest 2 cluster)
-NbClust(attribute.rating[-1], method="ward.D2", index="ch")
 
 
 
@@ -99,19 +162,20 @@ plot(attribute.rating$Person, attribute.rating$wrapping, col=hcl, pch=19, cex=0.
 plot(attribute.rating$Person, attribute.rating$image, col=hcl, pch=19, cex=0.5)
 plot(attribute.rating$Person, attribute.rating$commercial, col=hcl, pch=19, cex=0.5)
 
+```
 
-
-
-
-
+```{r}
 # -------------------------------- kmeans
 library(cluster)
+library(NbClust)
 
 # Calinski and Harabasz (suggest 2 cluster)
-NbClust(attribute.rating[-1], method="kmeans", index="ch")
+NbClust(attribute.rating[-1], method="kmeans")
 
-set.seed(4)
-seg.k <- kmeans(attribute.rating[-c(1)] , centers= 3)
+# set.seed(3) #78.43% plot
+set.seed(2)
+
+seg.k <- kmeans(attribute.rating[-c(1)], centers= 3)
 
 attribute.rating$kmeans <- seg.k$cluster
 clusplot(attribute.rating[-c(1)], seg.k$cluster, color=TRUE, shade=TRUE,labels= , lines=0, main="K-means cluster")
@@ -130,47 +194,89 @@ seg.k$betweenss/seg.k$totss
 
 
 
-# kmeans Silhouette
+
+
+
+# kmeans Silhouette (不用)
 
 library("cluster")
 d <- dist(attribute.rating[-c(1)])
-set.seed(4)
+set.seed(2)
 seg.k <- kmeans(attribute.rating[-c(1)] , centers= 2)
 seg.k 
 memb2 <- seg.k$cluster
 
 s2 <- silhouette(memb2, d)
-plot(s2, col=1:2, border=NA)
+plot(s2, col=1:2, border=NA, main = "Silhouette Plot of the Kmeans Cluster")
+
+# add kmeans in the table
+library(readxl)
+socio<-read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "info_xin")
+ab <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "attri_xin")
+socio<-as.data.frame(socio)
+ab <- as.data.frame(ab)
+
+socio$kmeans <- seg.k$cluster
+bars<-merge(ab,socio,by="Person")
+
+
+
+write.csv(bars, file = "kmeans3.csv")
+# Mosaic
+
+plot(table(socio$Gender, socio$ChocoFrequency, socio$Sport), las =2, xlab = "choco frequency", ylab = "sport frequency") # 女的比男的爱吃巧克力（结论能不能乱写）
+
+plot(table(socio$kmeans, socio$ChocoFrequency, socio$Sport), las =2, xlab = "choco frequency", ylab = "sport frequency") # 分类为爱吃巧克力和不爱的
+
+# 巧克力的消费程度
+plot(table(socio$kmeans,socio$ChocoFrequency_Num))
+
+# 运动
+plot(table(socio$kmeans,socio$Sport_Num), las =2)
+
+# brand
+brand <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "Direct Preference Rating")
+brand$kmeans <- seg.k$cluster
+
+seg.summ <- function (data, groups) 
+{aggregate (data , list(groups), function (x) mean(as.numeric(x)))}
+
+seg.summ(brand, brand$kmeans)
+
+# 每个人对attribute的打分, omit NA
+dat <- read_excel("Data_Chocolate_allinterviews.xlsx", sheet = "AttributeRatingsStacked")
+id.attr<- aggregate(dat,by=list(dat$Person),mean, na.rm=T)
+
+id.attr$kmeans<- seg.k$cluster
+
+tmp <- aggregate(id.attr, by=list(id.attr$kmeans),mean, na.rm=T);tmp
+
+#Chernoff faces
+library("MASS")
+library("aplpack")
+
+tmp <- tmp[-c(1:4,18)]
+x <- scale(tmp)
+faces(x, scale=F)
+#
+aggregate(bars, by=list(bars$Occupation),mean, na.rm=T)
+aggregate(brand, by=list(socio$Occupation),mean, na.rm=T) # 学生最爱kr, 上班族最爱snicker
+aggregate(brand, by=list(socio$Gender),mean, na.rm=T) # 男女最爱kr，
 
 
 ```
 
 
-## remove the respondents with 0 rating
+
 ```{r}
-attribute.rating<-attribute.rating[!(attribute.rating$kmeans==3),]
-```
-
-
-
-
-# 不行
-```{r}
-
-# k-median
-library("flexclust")
-cl1 <- kcca(cluster.df, 2, family=kccaFamily('kmedians'))
-plot(cluster.df, col=cl1@second)
-cl1@centers
-# k-medoid
-library("cluster")
-cl2 <- pam(cluster.df, 3)
-plot(cluster.df, col=cl2$clustering)
-cl2$medoids
-
+library(gmodels)
+aggregate(bars[c(3:15)], by=list(bars$kmeans),sd)
+aggregate(bars[c(3:15)], by=list(bars$kmeans),ci)
 
 
 ```
+
+
 
 
 

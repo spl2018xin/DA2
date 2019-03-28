@@ -149,7 +149,11 @@ levelplot(p, main="Inverse & partial correlations")
 
 # anti-image
 pr <- -p/sqrt(outer(diag(p), diag(p)))
-levelplot(pr, main="Anti-Image correlation")
+levelplot(pr, main="Anti-Image Correlation",aspect="iso", scales=list(x=list(rot=70)))
+
+
+
+
 
 
 # Kaiser-Meyer-Olkin & MSA
@@ -163,7 +167,7 @@ cortest.bartlett(attribute[,3:15])
 ## wiki: Bartlett's test (see Snedecor and Cochran, 1989) is used to test if k samples are from populations with equal variances. Equal variances across populations is called homoscedasticity or homogeneity of variances. Some statistical tests, for example the analysis of variance, assume that variances are equal across groups or samples. The Bartlett test can be used to verify that assumption.
 
 
-## Bartlett检验的目的是确定所要求的数据是否曲子多元正态分布的总体，若差异检验的F值显著，表示索取数据来自正态分布，可以做进一步的分析。你给的结果中，sig显著，表示数据取自正态分布，很适合做因子分析。
+## Bartlett检验的目的是确定所要求的数据是否取自多元正态分布的总体，若差异检验的F值显著，表示索取数据来自正态分布，可以做进一步的分析。你给的结果中，sig显著，表示数据取自正态分布，很适合做因子分析。
 
 ```
 
@@ -188,13 +192,11 @@ factanal(attribute[,3:15], factors=4)
 
 
 #eigen(cor(attribute[,3:15]))
-n <- princomp(bars.gender[,3:15])
-n <- princomp(attribute[,3:15])
 
-summary(n)
 
-plot(n,type = "l", main = "The Scree Plot")
+
 scree(attribute[,3:15])
+
 
 ```
  The proportion of variance decreases as the number of the components increase, so here I would choose 4 components
@@ -212,10 +214,11 @@ DA2 Parallel analysis of Horn
 ## 可用/ Test/ DA2 Parallel analysis of Horn ----
 library("foreign")
 library("paran")
-x <-attribute[,-c(1,2)]
+#x <-attribute[,-c(1,2)]
+x <-bars.gender[,3:15]
 paran(x, centile=95, all=T, graph=T)
 library("psych")
-fa.parallel(x, fa="fa") #用这个
+fa.parallel(x) #用这个
 ## 根据Horn, 选择4个component比较合适，不过课堂上老师认为3个比较好
 ## Adjusted eigenvalues > 1 indicate dimensions to retain. (4 components retained)
 
@@ -251,10 +254,10 @@ factanal(attribute[,3:15], factors=4, rotation = "varimax")
 
 
 # oblimin rotation without Kaiser normalization
-fa1 <- fa(attribute[,3:15], nfactors=3)
+fa1 <- fa(attribute[,3:15], nfactors=4,rotate = "varimax")
 fa1
 # apply Kaiser normalization 
-fa2 <- fa(attribute[,3:15], nfactors=3, rotate="none")
+fa2 <- fa(attribute[,3:15], nfactors=5, rotate="none")
 fa2 <- kaiser(fa2)
 fa2
 # compare loading sets (vector cosines)
@@ -266,7 +269,7 @@ factor.congruence(fa1, fa2)
 ## 5. EFA Scores
 ```{r}
 library("psych")
-
+#不用这个
 # ML with Kaiser normalization
 fa1 <-factanal(attribute[,3:15], factors=3, scores="regression")
 head(fa1$scores)
@@ -277,27 +280,85 @@ head(fa2$scores)
 cor(fa1$scores, fa2$scores)
 
 ```
+```{r}
+#用gendar作弊
+
+x <-bars.gender[,3:15]
+paran(x, centile=95, all=T, graph=T)
+library("psych")
+fa.parallel(x) #用这个
+
+
+scree(cor(bars.gender[,3:15]))
+
+library("psych")
+a.fa.gender<-fa(bars.gender[,3:15],fm="ml", max.iter=1000,SMC=TRUE,scores='Anderson',nfactors=4, rotate ="varimax")
+a.fa.gender
+a.fa.gender$Structure
+
+a.fa.gender$score.cor
+a.fa.gender$loadings
+#
+
+
+EFA <-print(fa(bars.gender[,3:15], fm="ml", nfactors =4, scores='Anderson',rotate ="varimax")$ loadings ,cut =0.3)
+fa.diagram(EFA, simple = TRUE, main = "Orthogonal Rotation")
+
+
+
+
+aggregate(a.fa.gender$scores, by=list(bars.gender$Group.1,bars.gender$Group.2) ,mean, na.rm=TRUE)
+
+
+# pca or fa with choco data with data aggregated across persons
+
+bars.agg<-aggregate(bars[,-c(1,2,16:23)], by=list(bars$Product),mean, na.rm=TRUE)
+str(bars.agg)
+bars.agg
+a.fa.agg<-fa(bars.agg[,2:14],fm="ml", max.iter=1000,SMC=TRUE,scores='Anderson',nfactors=4, rotate ="varimax")
+qr(cor(bars.agg[,2:14]))
+
+
+
+```
+
 
 
 
 ```{r}
+
+library("psych")
+
+# oblimin
+fa(attribute[,3:15], nfactors = 4, rotate = "oblimin")
+
+# varimax 用这个
+ll<- fa(attribute[,3:15], nfactors = 4, rotate = "varimax",fm="ml");ll # maximum likelihood
+l<- print(ll$loadings, cut = 0.3);l
+fa.diagram(l,simple = T,main = "Orthogonal Rotation")
+
 # caci 的
 a.fa.gender<-fa(attribute[,3:15],fm="ml", max.iter=1000,SMC=TRUE,scores='Anderson',nfactors=4, rotate ="varimax")
 a.fa.gender
 
 EFA <-print(fa(attribute[,3:15], fm="ml", nfactors =4, scores='Anderson',rotate ="varimax")$ loadings ,cut =0.3)
-fa.diagram(EFA, simple = TRUE)
+fa.diagram(EFA, simple = TRUE, main = "Orthogonal Rotation")
 
-
+# 重要！！！！！！！！！！
 # In this case, we will select oblique rotation (rotate = “oblimin”) as we believe that there is correlation in the factors. Note that Varimax rotation is used under the assumption that the factors are completely uncorrelated. We will use `Ordinary Least Squared/Minres` factoring (fm = “minres”), as it is known to provide results similar to `Maximum Likelihood` without assuming multivariate normal distribution and derives solutions through iterative eigendecomposition like principal axis.
-fourfactor <- fa(x,nfactors = 4,rotate = "oblimin",scores='Anderson')
+fourfactor <- fa(bars.gender[,3:15],nfactors = 4,rotate = "oblimin",fm="minres")
 fourfactor
 print(fourfactor$loadings, cutoff = 0.3)
+fa.diagram(fourfactor,simple = T, main = "Oblique Rotation")
+# The root mean square of residuals (RMSR) is 0.05. This is acceptable as this value should be closer to 0. Next we should check RMSEA (root mean square error of approximation) index. Its value, 0.001 shows good model fit as it’s below 0.05. Finally, the Tucker-Lewis Index (TLI) is 0.93 – an acceptable value considering it’s over 0.9.
 
 
+fourfactor
+
+```
 
 
-
+```{r}
 # • 不要性别
 EFAscore<- aggregate(a.fa.gender$scores[,1:2], by=list(bars.gender$Group.1) ,mean)
 colnames(EFAscore)[1] <- c("Product")
@@ -316,13 +377,12 @@ abline(h = 0, v = 0, col = "grey")
 # Test 完
 
 #• 前两个factor
-plot(EFAscore$ML2,EFAscore$ML4, xlab = "Factor 1", ylab = "Fator 2", main = "EFAscore",
-     pch = 19, ylim = c(-5.5, 5.5), xlim = c(-5.5, 5.5))
-text(EFAscore$ML2,EFAscore$ML4, labels = EFAscore$Product, cex = 1, pos = 4)
+plot(EFAscore$ML2,EFAscore$ML4,xlab="Energy", ylab = "Marketing", main = "The First-Two-Factor EFA Scores by Brands", pch = 19, ylim = c(-2.5, 2.5), xlim = c(-2.5, 2.5))
+text(EFAscore$ML2,EFAscore$ML4, labels = EFAscore$Group.1, cex = 1, pos = 4)
 abline(h = 0, v = 0, col = "grey")
 
 # • attribute 前两个的plot
-factor.plot(a.fa.gender$loadings[,c("ML2", "ML4")], labels=rownames(a.fa.gender$loadings))
+factor.plot(a.fa.gender$loadings[,c("ML2", "ML4")], labels=rownames(a.fa.gender$loadings), xlab="Energy", ylab = "Marketing", cex = 0.6, pos = 1)
 
 write.csv(EFAscore, file = "EFAscore")
 ## Test图/ EFA_ ml orthogonal rotation----

@@ -1,0 +1,501 @@
+"","Person","Product","crunchy","creamy","sweet","chocolaty","healthful","calorie","rich","addiction","accessible","handy","wrapping","image","commercial","Gender","Age","Occupation","Marital Status","Children","City","States","Sport","Sport_Num","ChocoFrequency","ChocoFrequency_Num","kmeans"
+"1",1,"Balisto",5,2,3,3,3,4,4,3,3,3,2,3,3,"male",27,"I am an employee.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"2",1,"Bounty",2,4,5,3,2,4,3,3,3,4,4,3,3,"male",27,"I am an employee.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"3",1,"Duplo",4,3,4,4,2,4,4,4,4,4,4,3,3,"male",27,"I am an employee.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"4",1,"KinderBueno",4,4,5,4,1,5,4,3,3,2,3,4,1,"male",27,"I am an employee.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"5",1,"KinderRiegel",3,3,4,5,3,4,4,5,4,4,4,4,3,"male",27,"I am an employee.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"6",1,"KitKat",4,2,3,4,2,4,3,3,4,4,4,4,4,"male",27,"I am an employee.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"7",1,"Lion",3,4,4,4,2,4,4,4,4,4,4,4,3,"male",27,"I am an employee.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"8",1,"Mars",2,4,4,4,2,4,4,4,4,4,4,3,3,"male",27,"I am an employee.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"9",1,"Snickers",3,3,4,3,1,4,4,2,4,4,4,4,5,"male",27,"I am an employee.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"10",1,"Twix",4,4,4,4,1,4,4,4,4,4,4,4,4,"male",27,"I am an employee.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"11",2,"Balisto",4,1,5,2,1,5,5,1,5,5,3,2,3,"female",25,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"5-7 times per week",6,1
+"12",2,"Bounty",1,3,5,3,1,5,5,1,5,5,5,2,2,"female",25,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"5-7 times per week",6,1
+"13",2,"Duplo",4,3,5,4,1,5,5,1,5,5,3,4,4,"female",25,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"5-7 times per week",6,1
+"14",2,"KinderBueno",4,4,5,3,1,5,5,1,5,5,4,2,2,"female",25,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"5-7 times per week",6,1
+"15",2,"KinderRiegel",1,5,5,4,1,5,5,1,5,5,4,5,5,"female",25,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"5-7 times per week",6,1
+"16",2,"KitKat",5,3,5,4,1,5,5,1,5,5,4,2,2,"female",25,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"5-7 times per week",6,1
+"17",2,"Lion",4,3,5,3,1,5,5,1,5,5,4,4,4,"female",25,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"5-7 times per week",6,1
+"18",2,"Mars",1,5,5,3,1,5,5,1,5,5,4,3,3,"female",25,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"5-7 times per week",6,1
+"19",2,"Snickers",3,4,5,3,1,5,5,1,5,5,4,5,5,"female",25,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"5-7 times per week",6,1
+"20",2,"Twix",5,2,5,4,1,5,5,1,5,5,5,3,4,"female",25,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"5-7 times per week",6,1
+"21",3,"Balisto",4,2,4,4,2,5,3,1,4,4,3,2,3.17948717948718,"female",25,"I am a student.","es ist kompliziert","not report","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,2
+"22",3,"Bounty",2,4,5,4,1,5,1,1,4,3,4,2,4,"female",25,"I am a student.","es ist kompliziert","not report","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,2
+"23",3,"Duplo",4,2,5,5,1,5,1,4,4,4,4,2,5,"female",25,"I am a student.","es ist kompliziert","not report","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,2
+"24",3,"KinderBueno",4,5,5,5,1,4,1,4,4,4,4,4,2,"female",25,"I am a student.","es ist kompliziert","not report","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,2
+"25",3,"KinderRiegel",2,5,5,5,2,5,1,5,4,4,4,5,5,"female",25,"I am a student.","es ist kompliziert","not report","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,2
+"26",3,"KitKat",5,2,5,5,1,5,1,4,4,4,3,2,5,"female",25,"I am a student.","es ist kompliziert","not report","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,2
+"27",3,"Lion",4,4,4,4,1,5,1,2,4,4,4,1,3.20512820512821,"female",25,"I am a student.","es ist kompliziert","not report","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,2
+"28",3,"Mars",2,5,5,5,1,5,1,2,4,4,3,3,2,"female",25,"I am a student.","es ist kompliziert","not report","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,2
+"29",3,"Snickers",3.58333333333333,3.4375,4.44897959183673,3.95833333333333,1.42222222222222,4.60416666666667,3.6,2.93181818181818,4.34782608695652,4.25,3.27659574468085,4.38775510204082,4.34782608695652,"female",25,"I am a student.","es ist kompliziert","not report","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,2
+"30",3,"Twix",4,4,4,4,1,4,1,2,4,4,2,2,4.06382978723404,"female",25,"I am a student.","es ist kompliziert","not report","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,2
+"31",4,"Balisto",4,2,4,4,3,4,4,2,2,3,4,3,2,"female",24,"I am a student.","single","0","Village","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"32",4,"Bounty",1,3,4,1,1,3,4,3.04878048780488,3,4,4,2,2,"female",24,"I am a student.","single","0","Village","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"33",4,"Duplo",3,2,5,5,2,4,4,5,3,4,4,5,5,"female",24,"I am a student.","single","0","Village","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"34",4,"KinderBueno",2,4,4,5,2,4,4,5,4,2,3,3,1,"female",24,"I am a student.","single","0","Village","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"35",4,"KinderRiegel",1,5,5,5,2,4,4,5,5,5,5,5,3,"female",24,"I am a student.","single","0","Village","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"36",4,"KitKat",3,3,5,5,2,4,4,3,4,2,3,4,4,"female",24,"I am a student.","single","0","Village","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"37",4,"Lion",3,4,5,5,2,5,4,2,3,4,4,2,4,"female",24,"I am a student.","single","0","Village","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"38",4,"Mars",1,4,4,3,1,4,4,3,4,4,4,4,5,"female",24,"I am a student.","single","0","Village","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"39",4,"Snickers",4,4,5,5,1,4,4,3,4,4,4,4,5,"female",24,"I am a student.","single","0","Village","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"40",4,"Twix",4,2,4,3,1,3,4,2,4,3,4,4,5,"female",24,"I am a student.","single","0","Village","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"41",5,"Balisto",5,4,5,5,4,4,5,2,3,5,5,3,3,"male",21,"I am a student.","single","0","Village","Nordrhein-Westfalen","1-3 times a week",3,"2-4 times per week",5,2
+"42",5,"Bounty",1.97872340425532,3.21276595744681,4.4375,3.4375,1.65957446808511,4.22916666666667,3.53488372093023,3.04878048780488,4.02272727272727,3.95744680851064,3.91111111111111,3.4468085106383,2.9047619047619,"male",21,"I am a student.","single","0","Village","Nordrhein-Westfalen","1-3 times a week",3,"2-4 times per week",5,2
+"43",5,"Duplo",3,5,5,5,3,4,4,5,5,5,5,5,5,"male",21,"I am a student.","single","0","Village","Nordrhein-Westfalen","1-3 times a week",3,"2-4 times per week",5,2
+"44",5,"KinderBueno",5,5,5,5,3,4,5,5,5,5,5,4,4,"male",21,"I am a student.","single","0","Village","Nordrhein-Westfalen","1-3 times a week",3,"2-4 times per week",5,2
+"45",5,"KinderRiegel",2,5,5,5,4,4,4,4,5,5,5,5,5,"male",21,"I am a student.","single","0","Village","Nordrhein-Westfalen","1-3 times a week",3,"2-4 times per week",5,2
+"46",5,"KitKat",5,4,5,5,4,4,4,4,5,5,4,5,5,"male",21,"I am a student.","single","0","Village","Nordrhein-Westfalen","1-3 times a week",3,"2-4 times per week",5,2
+"47",5,"Lion",5,5,5,5,3,4,5,5,5,5,5,5,5,"male",21,"I am a student.","single","0","Village","Nordrhein-Westfalen","1-3 times a week",3,"2-4 times per week",5,2
+"48",5,"Mars",3,5,5,5,3,4,3,3,5,5,3,5,5,"male",21,"I am a student.","single","0","Village","Nordrhein-Westfalen","1-3 times a week",3,"2-4 times per week",5,2
+"49",5,"Snickers",3,3,4,3,1,4,3,2,4,4,2,4,4,"male",21,"I am a student.","single","0","Village","Nordrhein-Westfalen","1-3 times a week",3,"2-4 times per week",5,2
+"50",5,"Twix",5,5,5,5,3,4,5,5,5,5,5,5,5,"male",21,"I am a student.","single","0","Village","Nordrhein-Westfalen","1-3 times a week",3,"2-4 times per week",5,2
+"51",6,"Balisto",5,3,4,4,3,5,3,3,3,4,5,4,4,"female",18,"I am a student.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"52",6,"Bounty",3,4,5,3,2,5,4,3,3,4,5,4,3,"female",18,"I am a student.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"53",6,"Duplo",4,3,5,4,2,5,4,5,5,5,4,5,5,"female",18,"I am a student.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"54",6,"KinderBueno",4,4,4,3,2,5,4,3,3,4,4,5,4,"female",18,"I am a student.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"55",6,"KinderRiegel",2,4,5,5,2,5,4,5,5,5,4,5,5,"female",18,"I am a student.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"56",6,"KitKat",5,3,5,3,2,5,3,4,4,4,3,5,5,"female",18,"I am a student.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"57",6,"Lion",5,3,5,4,2,5,4,3,3,3,4,5,4,"female",18,"I am a student.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"58",6,"Mars",2,5,5,4,2,5,5,3,4,5,4,5,4,"female",18,"I am a student.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"59",6,"Snickers",2,3,4,3,1,5,4,3,4,5,3,5,5,"female",18,"I am a student.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"60",6,"Twix",5,3,5,4,2,5,3,2,4,3,5,5,5,"female",18,"I am a student.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"61",7,"Balisto",4,2,4,3,2,4,3,2.92105263157895,3,4,3,3,3.17948717948718,"male",29,"I am an employee.","single","0","City","Hessen","1-3 times a week",3,"once a week",4,3
+"62",7,"Bounty",3,2,4,3,2,4,4,3.04878048780488,4,3.95744680851064,3,4,2.9047619047619,"male",29,"I am an employee.","single","0","City","Hessen","1-3 times a week",3,"once a week",4,3
+"63",7,"Duplo",2,2,4,3,2,4,3,3.26666666666667,4,4.06122448979592,2,4,4,"male",29,"I am an employee.","single","0","City","Hessen","1-3 times a week",3,"once a week",4,3
+"64",7,"KinderBueno",2,5,4,4,2,4,3,3.62222222222222,4,3.79591836734694,3,3,3,"male",29,"I am an employee.","single","0","City","Hessen","1-3 times a week",3,"once a week",4,3
+"65",7,"KinderRiegel",2,3,4,3,2,4,3,4.02222222222222,4,4.40816326530612,3,4,4,"male",29,"I am an employee.","single","0","City","Hessen","1-3 times a week",3,"once a week",4,3
+"66",7,"KitKat",2,2,4,2,2,4,3,3.15555555555556,4,3.81632653061224,3,4,4,"male",29,"I am an employee.","single","0","City","Hessen","1-3 times a week",3,"once a week",4,3
+"67",7,"Lion",2,4,4,3,2,4,4,3.25,3,4,3,2,3.20512820512821,"male",29,"I am an employee.","single","0","City","Hessen","1-3 times a week",3,"once a week",4,3
+"68",7,"Mars",2,4,4,4,2,4,4,2.89130434782609,4,4.14285714285714,4,4,3.97826086956522,"male",29,"I am an employee.","single","0","City","Hessen","1-3 times a week",3,"once a week",4,3
+"69",7,"Snickers",4,4,4,4,2,4,4,3,4,4.25,3,4,4,"male",29,"I am an employee.","single","0","City","Hessen","1-3 times a week",3,"once a week",4,3
+"70",7,"Twix",2,4,4,3,2,4,4,3.28260869565217,4,4.04081632653061,4,4,4.06382978723404,"male",29,"I am an employee.","single","0","City","Hessen","1-3 times a week",3,"once a week",4,3
+"71",8,"Balisto",4.46511627906977,1.90697674418605,4.04545454545455,3.86363636363636,2.27906976744186,4.09302325581395,3.42105263157895,2.92105263157895,3.48717948717949,4,3.41463414634146,3.16279069767442,3.17948717948718,"male",20,"I am self-employed.","single","0","City","Berlin","never",1,"once a week",4,2
+"72",8,"Bounty",4,3,5,5,5,5,5,5,5,5,5,5,5,"male",20,"I am self-employed.","single","0","City","Berlin","never",1,"once a week",4,2
+"73",8,"Duplo",5,2,5,5,1,4,4,1,4,4,4,5,5,"male",20,"I am self-employed.","single","0","City","Berlin","never",1,"once a week",4,2
+"74",8,"KinderBueno",5,5,5,5,1.48888888888889,5,5,2,2,2,2,5,5,"male",20,"I am self-employed.","single","0","City","Berlin","never",1,"once a week",4,2
+"75",8,"KinderRiegel",5,5,5,5,5,5,5,5,5,5,5,5,5,"male",20,"I am self-employed.","single","0","City","Berlin","never",1,"once a week",4,2
+"76",8,"KitKat",5,5,5,5,1.56521739130435,5,3,3.15555555555556,5,5,4,5,5,"male",20,"I am self-employed.","single","0","City","Berlin","never",1,"once a week",4,2
+"77",8,"Lion",5,5,5,5,2,5,3,1,3.8,4,3.55,5,5,"male",20,"I am self-employed.","single","0","City","Berlin","never",1,"once a week",4,2
+"78",8,"Mars",5,5,5,5,1.45652173913043,5,5,5,5,5,1,5,5,"male",20,"I am self-employed.","single","0","City","Berlin","never",1,"once a week",4,2
+"79",8,"Snickers",5,5,5,5,1,5,2,1,5,3,5,5,4.34782608695652,"male",20,"I am self-employed.","single","0","City","Berlin","never",1,"once a week",4,2
+"80",8,"Twix",5,5,5,5,5,5,4,5,5,4,4,5,5,"male",20,"I am self-employed.","single","0","City","Berlin","never",1,"once a week",4,2
+"81",9,"Balisto",5,1,4,4,1,5,3.42105263157895,2,2,1,2,3,3.17948717948718,"male",29,"I am an employee.","single","0","City","Berlin","every day",5,"once a week",4,3
+"82",9,"Bounty",1,1,1,1,1,1,3.53488372093023,1,1,1,1,1,2.9047619047619,"male",29,"I am an employee.","single","0","City","Berlin","every day",5,"once a week",4,3
+"83",9,"Duplo",5,5,5,5,1,5,3.09302325581395,2,2,4,4,4,4.36734693877551,"male",29,"I am an employee.","single","0","City","Berlin","every day",5,"once a week",4,3
+"84",9,"KinderBueno",5,5,5,5,1,5,3.47619047619048,5,1,1,5,4,3,"male",29,"I am an employee.","single","0","City","Berlin","every day",5,"once a week",4,3
+"85",9,"KinderRiegel",1,5,5,5,1,5,3.44444444444444,5,5,4,2,4,4.4468085106383,"male",29,"I am an employee.","single","0","City","Berlin","every day",5,"once a week",4,3
+"86",9,"KitKat",4,2,2,2,1,5,3.26666666666667,2,4,1,4,4,3.89583333333333,"male",29,"I am an employee.","single","0","City","Berlin","every day",5,"once a week",4,3
+"87",9,"Lion",1,1,1,1,1,5,3.82051282051282,1,1,1,1,1,3.20512820512821,"male",29,"I am an employee.","single","0","City","Berlin","every day",5,"once a week",4,3
+"88",9,"Mars",1,1,4,2,1,5,3.66666666666667,2,4,5,5,4,3.97826086956522,"male",29,"I am an employee.","single","0","City","Berlin","every day",5,"once a week",4,3
+"89",9,"Snickers",5,1,4,5,1,5,3.6,2.93181818181818,5,5,5,5,4.34782608695652,"male",29,"I am an employee.","single","0","City","Berlin","every day",5,"once a week",4,3
+"90",9,"Twix",5,4,4,2,1,5,3.57777777777778,3,4,2,2,3,4.06382978723404,"male",29,"I am an employee.","single","0","City","Berlin","every day",5,"once a week",4,3
+"91",10,"Balisto",4,5,4,4,1,5,5,4,4,5,4,3,5,"female",27,"I am a student.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"less than once a month",2,1
+"92",10,"Bounty",2,5,5,4,1,5,5,4,4,5,4,3,2,"female",27,"I am a student.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"less than once a month",2,1
+"93",10,"Duplo",5,2,5,5,1,5,5,4,4,5,4,3,3,"female",27,"I am a student.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"less than once a month",2,1
+"94",10,"KinderBueno",3,4,5,4,1,5,5,4,4,3,4,2,1,"female",27,"I am a student.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"less than once a month",2,1
+"95",10,"KinderRiegel",1,5,5,5,1,5,5,5,4,5,5,5,5,"female",27,"I am a student.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"less than once a month",2,1
+"96",10,"KitKat",5,3,5,5,1,5,4,3,3,3,2,4,5,"female",27,"I am a student.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"less than once a month",2,1
+"97",10,"Lion",4,4,5,5,1,5,5,3,3,5,3,2,2,"female",27,"I am a student.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"less than once a month",2,1
+"98",10,"Mars",2,3,5,4,1,5,5,4,3,5,3,3,3,"female",27,"I am a student.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"less than once a month",2,1
+"99",10,"Snickers",3,4,5,5,1,5,5,4,4,3,3,5,5,"female",27,"I am a student.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"less than once a month",2,1
+"100",10,"Twix",4,4,5,3,1,5,5,5,4,4,4,4,4,"female",27,"I am a student.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"less than once a month",2,1
+"101",11,"Balisto",4,2,3,3,4,4,3,3,4,4,4,3,4,"female",27,"I am an employee.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"102",11,"Bounty",3,4,4,4,1,4,4,4,4,4,4,3,3,"female",27,"I am an employee.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"103",11,"Duplo",4,2,4,4,1,4,4,3,4,4,4,3,3,"female",27,"I am an employee.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"104",11,"KinderBueno",3,3,3,3,1,4,4,1,4,4,4,3,3,"female",27,"I am an employee.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"105",11,"KinderRiegel",4,5,5,5,1,4,4,5,5,5,5,5,5,"female",27,"I am an employee.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"106",11,"KitKat",3,3,4,4,1,4,4,3,4,4,4,3,3,"female",27,"I am an employee.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"107",11,"Lion",4,4,4,4,1,4,4,3,4,4,4,3,3,"female",27,"I am an employee.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"108",11,"Mars",3,4,4,4,1,4,4,4,4,4,4,3,3,"female",27,"I am an employee.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"109",11,"Snickers",4,4,4,4,1,4,4,3,4,4,4,4,3,"female",27,"I am an employee.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"110",11,"Twix",4,3,3,4,1,4,4,3,4,4,4,3,3,"female",27,"I am an employee.","in a relationship","not report","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"111",12,"Balisto",5,2,5,3,4,5,4,2,4,5,5,5,5,"female",25,"At home for Babys","married","2","City","Sachsen-Anhalt","less than once a week",2,"2-4 times per week",5,1
+"112",12,"Bounty",1,4,5,4,5,5,4,5,5,5,5,5,2,"female",25,"At home for Babys","married","2","City","Sachsen-Anhalt","less than once a week",2,"2-4 times per week",5,1
+"113",12,"Duplo",5,4,5,5,4,4,4,5,5,5,5,5,5,"female",25,"At home for Babys","married","2","City","Sachsen-Anhalt","less than once a week",2,"2-4 times per week",5,1
+"114",12,"KinderBueno",5,5,5,2,4,4,4,5,5,5,5,4,4,"female",25,"At home for Babys","married","2","City","Sachsen-Anhalt","less than once a week",2,"2-4 times per week",5,1
+"115",12,"KinderRiegel",2,5,5,5,4,4,3,5,5,5,5,5,5,"female",25,"At home for Babys","married","2","City","Sachsen-Anhalt","less than once a week",2,"2-4 times per week",5,1
+"116",12,"KitKat",5,1,5,4,4,3,3,2,5,5,5,5,5,"female",25,"At home for Babys","married","2","City","Sachsen-Anhalt","less than once a week",2,"2-4 times per week",5,1
+"117",12,"Lion",4,3,5,4,4,5,5,3,5,5,5,5,5,"female",25,"At home for Babys","married","2","City","Sachsen-Anhalt","less than once a week",2,"2-4 times per week",5,1
+"118",12,"Mars",1,5,5,3,5,5,5,5,4,5,5,5,5,"female",25,"At home for Babys","married","2","City","Sachsen-Anhalt","less than once a week",2,"2-4 times per week",5,1
+"119",12,"Snickers",4,3,5,4,5,5,5,3,4,5,5,5,3,"female",25,"At home for Babys","married","2","City","Sachsen-Anhalt","less than once a week",2,"2-4 times per week",5,1
+"120",12,"Twix",5,4,5,3,4,5,5,3,5,5,5,5,5,"female",25,"At home for Babys","married","2","City","Sachsen-Anhalt","less than once a week",2,"2-4 times per week",5,1
+"121",13,"Balisto",5,1,3,4,3,1,2,2,2,4,4,5,2,"female",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,3
+"122",13,"Bounty",1,4,5,3,1,4,4,3,4,3,3,2,2.9047619047619,"female",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,3
+"123",13,"Duplo",2,1,2,5,2,3,3,1,4,3,3,4,2,"female",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,3
+"124",13,"KinderBueno",4,4,5,4,1,4,3,2,4,3,4,3,1,"female",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,3
+"125",13,"KinderRiegel",1,2,3,5,2,4,3,2,3,3,3,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,3
+"126",13,"KitKat",4,1,2,4,1,4,3,2,4,3,3,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,3
+"127",13,"Lion",4,5,5,4,1,5,5,5,4,4,4,5,2,"female",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,3
+"128",13,"Mars",2,5,4,2,1,5,4,2,5,3,4,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,3
+"129",13,"Snickers",5,5,4,4,1,5,4,5,5,5,4,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,3
+"130",13,"Twix",4,4,4,5,1,5,4,5,5,5,4,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,3
+"131",14,"Balisto",4,2,4,4,3,4,2,3,3,4,3,3,3,"female",31,"I am an employee.","married","1","City","Sachsen","1-3 times a week",3,"once a week",4,1
+"132",14,"Bounty",2,3,4,3,2,4,3,3,4,4,4,4,3,"female",31,"I am an employee.","married","1","City","Sachsen","1-3 times a week",3,"once a week",4,1
+"133",14,"Duplo",4,3,4,4,2,4,2,4,4,4,4,4,5,"female",31,"I am an employee.","married","1","City","Sachsen","1-3 times a week",3,"once a week",4,1
+"134",14,"KinderBueno",4,3,4,2,2,4,3,4,3,2,3,2,2,"female",31,"I am an employee.","married","1","City","Sachsen","1-3 times a week",3,"once a week",4,1
+"135",14,"KinderRiegel",2,4,4,4,2,4,4,5,5,5,4,4,5,"female",31,"I am an employee.","married","1","City","Sachsen","1-3 times a week",3,"once a week",4,1
+"136",14,"KitKat",4,2,4,4,1,4,3,3,4,4,3,4,3,"female",31,"I am an employee.","married","1","City","Sachsen","1-3 times a week",3,"once a week",4,1
+"137",14,"Lion",4,4,5,4,1,4,5,3,4,4,3,3,2,"female",31,"I am an employee.","married","1","City","Sachsen","1-3 times a week",3,"once a week",4,1
+"138",14,"Mars",2,4,5,4,1,5,5,3,5,4,2,4,3,"female",31,"I am an employee.","married","1","City","Sachsen","1-3 times a week",3,"once a week",4,1
+"139",14,"Snickers",3,3,5,4,1,4,4,4,4,4,2,4,5,"female",31,"I am an employee.","married","1","City","Sachsen","1-3 times a week",3,"once a week",4,1
+"140",14,"Twix",4,2,5,3,1,4,4,4,5,4,3,4,4,"female",31,"I am an employee.","married","1","City","Sachsen","1-3 times a week",3,"once a week",4,1
+"141",15,"Balisto",4.46511627906977,1.90697674418605,4.04545454545455,3.86363636363636,2.27906976744186,4.09302325581395,3.42105263157895,2.92105263157895,4,4,3,4,2,"male",23,"I am a student.","single","0","City","Bayern","4-7 times a week",4,"once a week",4,2
+"142",15,"Bounty",1,2,4,4,1,4,4,4,4,4,3,4,4,"male",23,"I am a student.","single","0","City","Bayern","4-7 times a week",4,"once a week",4,2
+"143",15,"Duplo",4,1,5,4,1,4,3,4,4,3,3,5,3,"male",23,"I am a student.","single","0","City","Bayern","4-7 times a week",4,"once a week",4,2
+"144",15,"KinderBueno",3.77083333333333,4.44897959183673,4.57142857142857,3.79591836734694,1,4.30612244897959,3.47619047619048,3.62222222222222,4,4,3,4,2,"male",23,"I am a student.","single","0","City","Bayern","4-7 times a week",4,"once a week",4,2
+"145",15,"KinderRiegel",2,3,5,4,2,3,3,2,4,3,3,5,4,"male",23,"I am a student.","single","0","City","Bayern","4-7 times a week",4,"once a week",4,2
+"146",15,"KitKat",5,1,5,4,1,5,3,5,5,5,4,5,3,"male",23,"I am a student.","single","0","City","Bayern","4-7 times a week",4,"once a week",4,2
+"147",15,"Lion",4,1,4,4,1,4,3,4,4,4,3,4,2,"male",23,"I am a student.","single","0","City","Bayern","4-7 times a week",4,"once a week",4,2
+"148",15,"Mars",2,5,5,2,1,4,4,2,5,5,4,5,5,"male",23,"I am a student.","single","0","City","Bayern","4-7 times a week",4,"once a week",4,2
+"149",15,"Snickers",4,2,3,2,2,5,4,5,5,4,3,5,5,"male",23,"I am a student.","single","0","City","Bayern","4-7 times a week",4,"once a week",4,2
+"150",15,"Twix",4,1,4,2,1,5,4,4,5,5,4,5,3,"male",23,"I am a student.","single","0","City","Bayern","4-7 times a week",4,"once a week",4,2
+"151",16,"Balisto",5,1,3,3,1,3,3.42105263157895,2.92105263157895,3.48717948717949,4,3.41463414634146,3,3,"female",23,"I am a student.","in a relationship","0","City","Sachsen","1-3 times a week",3,"once a week",4,3
+"152",16,"Bounty",1,5,4,3,1,4,3.53488372093023,3.04878048780488,4.02272727272727,4,3.91111111111111,3,3,"female",23,"I am a student.","in a relationship","0","City","Sachsen","1-3 times a week",3,"once a week",4,3
+"153",16,"Duplo",4,1,3,3,1,4,3.09302325581395,3.26666666666667,3.97872340425532,4,3.5531914893617,4,4,"female",23,"I am a student.","in a relationship","0","City","Sachsen","1-3 times a week",3,"once a week",4,3
+"154",16,"KinderBueno",4,4,4,3,1,4,3,3,3,4,3,2,2,"female",23,"I am a student.","in a relationship","0","City","Sachsen","1-3 times a week",3,"once a week",4,3
+"155",16,"KinderRiegel",3,3,4,4,1,3,3.44444444444444,4.02222222222222,4.46808510638298,5,4,5,5,"female",23,"I am a student.","in a relationship","0","City","Sachsen","1-3 times a week",3,"once a week",4,3
+"156",16,"KitKat",5,1,4,4,1,4,3.26666666666667,3,3,5,3.53191489361702,5,4,"female",23,"I am a student.","in a relationship","0","City","Sachsen","1-3 times a week",3,"once a week",4,3
+"157",16,"Lion",4,3,4,3,1,4,3.82051282051282,3.25,3.8,3,3.55,3,2,"female",23,"I am a student.","in a relationship","0","City","Sachsen","1-3 times a week",3,"once a week",4,3
+"158",16,"Mars",1,5,5,2,1,4,3.66666666666667,3,3,2,3.48936170212766,4,3,"female",23,"I am a student.","in a relationship","0","City","Sachsen","1-3 times a week",3,"once a week",4,3
+"159",16,"Snickers",3,4,4,2,1,5,2,2.93181818181818,4.34782608695652,3,3,5,4,"female",23,"I am a student.","in a relationship","0","City","Sachsen","1-3 times a week",3,"once a week",4,3
+"160",16,"Twix",5,2,4,3,1,4,3.57777777777778,3,4.27659574468085,4,3.59574468085106,3,3,"female",23,"I am a student.","in a relationship","0","City","Sachsen","1-3 times a week",3,"once a week",4,3
+"161",17,"Balisto",4,2,5,5,2,5,4,3,4,4,3,4,4,"female",28,"I am an employee.","single","0","City","Baden Württemberg","4-7 times a week",4,"once a week",4,1
+"162",17,"Bounty",3,3,5,5,1,5,4,3,4,4,4,4,4,"female",28,"I am an employee.","single","0","City","Baden Württemberg","4-7 times a week",4,"once a week",4,1
+"163",17,"Duplo",4,2,5,5,1,4,3,3,4,4,3,4,4,"female",28,"I am an employee.","single","0","City","Baden Württemberg","4-7 times a week",4,"once a week",4,1
+"164",17,"KinderBueno",3,4,5,4,1,4,3,3,2,2,3,2,3,"female",28,"I am an employee.","single","0","City","Baden Württemberg","4-7 times a week",4,"once a week",4,1
+"165",17,"KinderRiegel",2,4,5,5,1,4,4,3,4,3,3,3,3,"female",28,"I am an employee.","single","0","City","Baden Württemberg","4-7 times a week",4,"once a week",4,1
+"166",17,"KitKat",4,3,5,5,1,4,4,4,4,4,4,4,4,"female",28,"I am an employee.","single","0","City","Baden Württemberg","4-7 times a week",4,"once a week",4,1
+"167",17,"Lion",4,4,5,5,1,5,4,3,4,4,3,3,3,"female",28,"I am an employee.","single","0","City","Baden Württemberg","4-7 times a week",4,"once a week",4,1
+"168",17,"Mars",3,4,5,5,1,5,4,3,4,4,3,4,4,"female",28,"I am an employee.","single","0","City","Baden Württemberg","4-7 times a week",4,"once a week",4,1
+"169",17,"Snickers",3,4,5,5,1,5,5,4,4,4,3,4,4,"female",28,"I am an employee.","single","0","City","Baden Württemberg","4-7 times a week",4,"once a week",4,1
+"170",17,"Twix",4,4,5,5,1,5,5,5,5,5,3,3,4,"female",28,"I am an employee.","single","0","City","Baden Württemberg","4-7 times a week",4,"once a week",4,1
+"171",18,"Balisto",4.46511627906977,1.90697674418605,4.04545454545455,3.86363636363636,2.27906976744186,4.09302325581395,3.42105263157895,2.92105263157895,3.48717948717949,4,3.41463414634146,3.16279069767442,3.17948717948718,"female",23,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,2
+"172",18,"Bounty",2,1,5,3,1,2,4,2,5,3,3,3,3,"female",23,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,2
+"173",18,"Duplo",4,1,5,5,1,4,3.09302325581395,3,4,4,4,4,4,"female",23,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,2
+"174",18,"KinderBueno",4,5,5,2,1,2,3.47619047619048,4,3,5,4,3,3,"female",23,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,2
+"175",18,"KinderRiegel",2,3,5,5,1,5,5,5,5,5,5,5,5,"female",23,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,2
+"176",18,"KitKat",4,1,4,4,1,3,3,3,3,4,3,3,3,"female",23,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,2
+"177",18,"Lion",4.18604651162791,3.37209302325581,4.56818181818182,4.04651162790698,1.56818181818182,4.63636363636364,3.82051282051282,3.25,3.8,4,3.55,3.4390243902439,3.20512820512821,"female",23,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,2
+"178",18,"Mars",1,4,4,2,1,3,3,3,3,3,3,3,3,"female",23,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,2
+"179",18,"Snickers",3,3,3,3,3,3,3,3,3,3,3,3,3,"female",23,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,2
+"180",18,"Twix",1,4,4,2,1,5,3,3,3,3,3,3,3,"female",23,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,2
+"181",19,"Balisto",4,2,3,3,3,3,3,2,3,3,4,4,4,"female",21,"I am a student.","single","0","City","Berlin","less than once a week",2,"less than once a month",2,1
+"182",19,"Bounty",2,2,2,4,1,5,2,2,3,3,5,5,2,"female",21,"I am a student.","single","0","City","Berlin","less than once a week",2,"less than once a month",2,1
+"183",19,"Duplo",5,3,5,4,1,5,2,2,3,3,5,5,5,"female",21,"I am a student.","single","0","City","Berlin","less than once a week",2,"less than once a month",2,1
+"184",19,"KinderBueno",5,5,5,4,1,5,1,3,3,3,5,5,2,"female",21,"I am a student.","single","0","City","Berlin","less than once a week",2,"less than once a month",2,1
+"185",19,"KinderRiegel",2,5,4,3,1,5,2,2,3,3,5,5,5,"female",21,"I am a student.","single","0","City","Berlin","less than once a week",2,"less than once a month",2,1
+"186",19,"KitKat",5,2,4,4,1,5,1,2,3,3,5,5,5,"female",21,"I am a student.","single","0","City","Berlin","less than once a week",2,"less than once a month",2,1
+"187",19,"Lion",5,3,5,4,1,5,2,2,3,3,4,2,2,"female",21,"I am a student.","single","0","City","Berlin","less than once a week",2,"less than once a month",2,1
+"188",19,"Mars",2,5,5,4,1,5,2,2,3,3,5,5,5,"female",21,"I am a student.","single","0","City","Berlin","less than once a week",2,"less than once a month",2,1
+"189",19,"Snickers",3,5,5,4,1,5,1,3,3,4,3,5,5,"female",21,"I am a student.","single","0","City","Berlin","less than once a week",2,"less than once a month",2,1
+"190",19,"Twix",5,5,4,4,1,5,1,3,3,4,5,5,2,"female",21,"I am a student.","single","0","City","Berlin","less than once a week",2,"less than once a month",2,1
+"191",20,"Balisto",5,1,4,5,3,2,3,2,3,3,3.41463414634146,2,4,"female",20,"I am a student.","single","0","City","Nordrhein-Westfalen","less than once a week",2,"2-4 times per week",5,2
+"192",20,"Bounty",2,2,5,5,3,3,3,4,4,4,5,3,2,"female",20,"I am a student.","single","0","City","Nordrhein-Westfalen","less than once a week",2,"2-4 times per week",5,2
+"193",20,"Duplo",3,2,4,4,2,4,2,4,4,4,4,5,5,"female",20,"I am a student.","single","0","City","Nordrhein-Westfalen","less than once a week",2,"2-4 times per week",5,2
+"194",20,"KinderBueno",3,5,5,4,2,3,2,5,4,5,4,3,2,"female",20,"I am a student.","single","0","City","Nordrhein-Westfalen","less than once a week",2,"2-4 times per week",5,2
+"195",20,"KinderRiegel",1,2,5,3,1,4,2,1,5,4,4,5,5,"female",20,"I am a student.","single","0","City","Nordrhein-Westfalen","less than once a week",2,"2-4 times per week",5,2
+"196",20,"KitKat",5,1,3,4,2,4,2,2,4,4,3,2,3,"female",20,"I am a student.","single","0","City","Nordrhein-Westfalen","less than once a week",2,"2-4 times per week",5,2
+"197",20,"Lion",4.18604651162791,3.37209302325581,4.56818181818182,4.04651162790698,1.56818181818182,4.63636363636364,3.82051282051282,3.25,3.8,4,3.55,3.4390243902439,3.20512820512821,"female",20,"I am a student.","single","0","City","Nordrhein-Westfalen","less than once a week",2,"2-4 times per week",5,2
+"198",20,"Mars",1,5,5,3,2,5,3,2,4,4,4,3,5,"female",20,"I am a student.","single","0","City","Nordrhein-Westfalen","less than once a week",2,"2-4 times per week",5,2
+"199",20,"Snickers",5,4,5,3,1,4,3,2,5,5,3,4,3,"female",20,"I am a student.","single","0","City","Nordrhein-Westfalen","less than once a week",2,"2-4 times per week",5,2
+"200",20,"Twix",3,3,4,4,2,4,2,2,4,4,3,5,5,"female",20,"I am a student.","single","0","City","Nordrhein-Westfalen","less than once a week",2,"2-4 times per week",5,2
+"201",21,"Balisto",5,1,4,4,4,4,3,3,3,4,4,3,3,"female",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"202",21,"Bounty",1,4,5,4,3,4,3,4,4,4,4,4,2,"female",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"203",21,"Duplo",4,2,4,3,1,4,3,1,3,3,3,3,5,"female",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"204",21,"KinderBueno",4,4,5,5,1.48888888888889,4,3,4,4,5,4,3,3,"female",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"205",21,"KinderRiegel",1,5,4,5,2,3,3,5,5,5,5,5,5,"female",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"206",21,"KitKat",5,1,5,4,1.56521739130435,4,3,1,3,2,2,3,3,"female",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"207",21,"Lion",4,2,5,4,1,5,3,4,3,5,4,3,2,"female",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"208",21,"Mars",1,5,5,4,1.45652173913043,5,3,2,3,5,2,4,3,"female",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"209",21,"Snickers",3,4,5,4,1.42222222222222,5,3,3,4,5,2,4,5,"female",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"210",21,"Twix",5,4,5,4,1.51063829787234,5,3,4,3,3,2,5,4,"female",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a month",3,1
+"211",22,"Balisto",5,2,4,4,2,3,3,3,2,3,3,2,2,"male",26,"I am an employee.","single","0","City","Bayern","less than once a week",2,"2-4 times per week",5,1
+"212",22,"Bounty",2,2,4,4,2,3,3,3,3,3,3,3,2,"male",26,"I am an employee.","single","0","City","Bayern","less than once a week",2,"2-4 times per week",5,1
+"213",22,"Duplo",5,3,4,4,2,3,3,4,4,3,3,4,5,"male",26,"I am an employee.","single","0","City","Bayern","less than once a week",2,"2-4 times per week",5,1
+"214",22,"KinderBueno",4,5,5,4,2,3,3,4,3,3,3,3,2,"male",26,"I am an employee.","single","0","City","Bayern","less than once a week",2,"2-4 times per week",5,1
+"215",22,"KinderRiegel",2,5,4,4,2,3,3,4,4,3,3,4,4,"male",26,"I am an employee.","single","0","City","Bayern","less than once a week",2,"2-4 times per week",5,1
+"216",22,"KitKat",5,3,4,4,2,3,3,3,4,3,3,5,4,"male",26,"I am an employee.","single","0","City","Bayern","less than once a week",2,"2-4 times per week",5,1
+"217",22,"Lion",5,3,4,4,2,3,3,4,3,4,3,3,4,"male",26,"I am an employee.","single","0","City","Bayern","less than once a week",2,"2-4 times per week",5,1
+"218",22,"Mars",3,5,5,5,2,3,3,3,4,3,4,4,2,"male",26,"I am an employee.","single","0","City","Bayern","less than once a week",2,"2-4 times per week",5,1
+"219",22,"Snickers",5,4,4,4,2,3,3,3,4,4,3,5,4,"male",26,"I am an employee.","single","0","City","Bayern","less than once a week",2,"2-4 times per week",5,1
+"220",22,"Twix",5,4,4,4,2,3,3,3,4,3,3,4,2,"male",26,"I am an employee.","single","0","City","Bayern","less than once a week",2,"2-4 times per week",5,1
+"221",23,"Balisto",4,3,5,4,3,5,5,4,5,5,4,5,4,"female",31,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"222",23,"Bounty",2,4,5,3,2,5,5,4,5,5,3,5,4,"female",31,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"223",23,"Duplo",5,4,5,4,2,4,4,4,5,5,3,5,4,"female",31,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"224",23,"KinderBueno",4,5,5,3,2,3,3,4,5,5,3,3,2,"female",31,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"225",23,"KinderRiegel",2,4,5,5,2,5,4,5,5,5,4,5,4,"female",31,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"226",23,"KitKat",5,4,5,5,2,4,4,5,5,4,4,5,5,"female",31,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"227",23,"Lion",5,5,5,4,2,5,5,4,5,5,4,5,4,"female",31,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"228",23,"Mars",2,3,4,4,2,3,5,4,5,5,4,5,5,"female",31,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"229",23,"Snickers",4,4,5,4,2,4,5,3,5,5,2,4,4,"female",31,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"230",23,"Twix",4,4,5,3,2,4,4,3,5,5,3,5,5,"female",31,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"231",24,"Balisto",4,1,3,3,1,5,4,2,3,4,3,2,1,"male",27,"I am a student.","not married","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"232",24,"Bounty",2,4,3,3,1,5,3,2,4,4,5,4,4,"male",27,"I am a student.","not married","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"233",24,"Duplo",4,2,4,4,1,5,3,3,4,4,4,4,4,"male",27,"I am a student.","not married","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"234",24,"KinderBueno",3,5,4,3,1,5,3,3,4,3,2,4,3,"male",27,"I am a student.","not married","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"235",24,"KinderRiegel",1,5,5,5,1,5,3,5,5,5,5,5,5,"male",27,"I am a student.","not married","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"236",24,"KitKat",5,1,4,4,1,5,3,3,4,4,4,5,5,"male",27,"I am a student.","not married","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"237",24,"Lion",4,4,4,4,1,5,3,2,2,4,4,2,1,"male",27,"I am a student.","not married","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"238",24,"Mars",2,3,4,3,1,5,2,2,4,5,3,4,4,"male",27,"I am a student.","not married","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"239",24,"Snickers",4,4,4,4,1,5,3,3,4,4,5,5,5,"male",27,"I am a student.","not married","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"240",24,"Twix",4,4,4,3,1,5,3,3,4,3,3,4,4,"male",27,"I am a student.","not married","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,1
+"241",25,"Balisto",5,1,4,3,1,4,2,4,4,5,5,2,1,"female",24,"I am a student.","in a relationship","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,2
+"242",25,"Bounty",1,4,5,1,1,5,1,2,5,5,5,2,1,"female",24,"I am a student.","in a relationship","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,2
+"243",25,"Duplo",5,2,5,4,1,5,1,4,5,5,4,5,5,"female",24,"I am a student.","in a relationship","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,2
+"244",25,"KinderBueno",5,5,4,2,1,5,2,5,5,4,4,5,2,"female",24,"I am a student.","in a relationship","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,2
+"245",25,"KinderRiegel",1,4,5,5,1,5,1,5,5,5,5,5,4,"female",24,"I am a student.","in a relationship","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,2
+"246",25,"KitKat",5,1,5,5,1,5,1,5,5,5,5,2,2,"female",24,"I am a student.","in a relationship","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,2
+"247",25,"Lion",4.18604651162791,3.37209302325581,4.56818181818182,4.04651162790698,1.56818181818182,4.63636363636364,3.82051282051282,3.25,3.8,4,3.55,3.4390243902439,3.20512820512821,"female",24,"I am a student.","in a relationship","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,2
+"248",25,"Mars",1,5,5,2,1,5,1,2,5,5,4,5,5,"female",24,"I am a student.","in a relationship","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,2
+"249",25,"Snickers",2,4,5,4,1,5,2,2,5,5,3,3,4,"female",24,"I am a student.","in a relationship","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,2
+"250",25,"Twix",5,2,5,4,1,5,2,2,5,5,4,2,2,"female",24,"I am a student.","in a relationship","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,2
+"251",26,"Balisto",4.46511627906977,1.90697674418605,4.04545454545455,3.86363636363636,2.27906976744186,4.09302325581395,3.42105263157895,2.92105263157895,3.48717948717949,4,3.41463414634146,3.16279069767442,3.17948717948718,"male",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a month",3,2
+"252",26,"Bounty",1.97872340425532,3.21276595744681,4.4375,3.4375,1.65957446808511,4.22916666666667,3.53488372093023,3.04878048780488,4.02272727272727,3.95744680851064,3.91111111111111,3.4468085106383,2.9047619047619,"male",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a month",3,2
+"253",26,"Duplo",4,4,4,3,2,3,3,3,4,4,4,4,5,"male",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a month",3,2
+"254",26,"KinderBueno",2,4,4,4,2,4,4,3,4,5,5,4,3,"male",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a month",3,2
+"255",26,"KinderRiegel",1,4,4,4,2,4,4,4,4,4,4,4,4,"male",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a month",3,2
+"256",26,"KitKat",4,4,4,4,2,4,4,3,4,3,4,3,3,"male",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a month",3,2
+"257",26,"Lion",4.18604651162791,3.37209302325581,4.56818181818182,4.04651162790698,1.56818181818182,4.63636363636364,3.82051282051282,3.25,3.8,4,3.55,3.4390243902439,3.20512820512821,"male",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a month",3,2
+"258",26,"Mars",2,4,4,4,2,5,4,4,5,5,5,5,5,"male",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a month",3,2
+"259",26,"Snickers",3,3,5,4,2,5,4,3,5,5,4,5,5,"male",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a month",3,2
+"260",26,"Twix",4,3,4,4,2,5,4,3,5,5,4,5,4,"male",26,"I am an employee.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a month",3,2
+"261",27,"Balisto",4,2,5,5,2,5,5,4,4,5,3,4,3,"male",26,"I am an employee.","in a relationship","0","Village","Berlin","1-3 times a week",3,"once a month",3,1
+"262",27,"Bounty",3,3,5,4,2,5,5,3,4,5,4,5,3,"male",26,"I am an employee.","in a relationship","0","Village","Berlin","1-3 times a week",3,"once a month",3,1
+"263",27,"Duplo",3,4,5,5,2,5,5,4,4,5,4,5,4,"male",26,"I am an employee.","in a relationship","0","Village","Berlin","1-3 times a week",3,"once a month",3,1
+"264",27,"KinderBueno",2,4,5,5,1,5,5,4,4,5,4,5,5,"male",26,"I am an employee.","in a relationship","0","Village","Berlin","1-3 times a week",3,"once a month",3,1
+"265",27,"KinderRiegel",3,4,5,5,2,5,5,4,4,5,4,5,4,"male",26,"I am an employee.","in a relationship","0","Village","Berlin","1-3 times a week",3,"once a month",3,1
+"266",27,"KitKat",5,2,5,5,2,5,5,4,5,5,4,5,4,"male",26,"I am an employee.","in a relationship","0","Village","Berlin","1-3 times a week",3,"once a month",3,1
+"267",27,"Lion",4,3,5,5,2,5,5,3,5,5,4,5,3,"male",26,"I am an employee.","in a relationship","0","Village","Berlin","1-3 times a week",3,"once a month",3,1
+"268",27,"Mars",3,3,4,5,1,5,5,4,4,5,3,5,3,"male",26,"I am an employee.","in a relationship","0","Village","Berlin","1-3 times a week",3,"once a month",3,1
+"269",27,"Snickers",3,3,4,5,1,4,4,3,4,4,3,5,3,"male",26,"I am an employee.","in a relationship","0","Village","Berlin","1-3 times a week",3,"once a month",3,1
+"270",27,"Twix",4,3,5,4,1,5,5,3,4,4,3,4,3,"male",26,"I am an employee.","in a relationship","0","Village","Berlin","1-3 times a week",3,"once a month",3,1
+"271",28,"Balisto",5,2,4,4,3,3,3,2,5,4,3,3,3,"female",23,"I am a student.","in a relationship","0","Village","Hessen","1-3 times a week",3,"once a week",4,1
+"272",28,"Bounty",2,2,4,4,2,4,2,2,5,4,4,4,4,"female",23,"I am a student.","in a relationship","0","Village","Hessen","1-3 times a week",3,"once a week",4,1
+"273",28,"Duplo",5,3,4,4,2,4,2,2,5,4,4,5,5,"female",23,"I am a student.","in a relationship","0","Village","Hessen","1-3 times a week",3,"once a week",4,1
+"274",28,"KinderBueno",4,5,5,5,2,4,2,2,5,4,4,3,3,"female",23,"I am a student.","in a relationship","0","Village","Hessen","1-3 times a week",3,"once a week",4,1
+"275",28,"KinderRiegel",2,4,4,4,2,4,2,2,5,4,4,4,4,"female",23,"I am a student.","in a relationship","0","Village","Hessen","1-3 times a week",3,"once a week",4,1
+"276",28,"KitKat",5,2,4,4,2,4,2,2,5,4,4,4,4,"female",23,"I am a student.","in a relationship","0","Village","Hessen","1-3 times a week",3,"once a week",4,1
+"277",28,"Lion",5,5,4,4,2,4,2,3,5,4,4,5,4,"female",23,"I am a student.","in a relationship","0","Village","Hessen","1-3 times a week",3,"once a week",4,1
+"278",28,"Mars",2,4,5,4,2,4,2,2,5,4,4,5,5,"female",23,"I am a student.","in a relationship","0","Village","Hessen","1-3 times a week",3,"once a week",4,1
+"279",28,"Snickers",3,4,4,4,2,5,2,2,4,4,3,4,4,"female",23,"I am a student.","in a relationship","0","Village","Hessen","1-3 times a week",3,"once a week",4,1
+"280",28,"Twix",4,3,4,4,2,4,2,2,5,4,4,4,4,"female",23,"I am a student.","in a relationship","0","Village","Hessen","1-3 times a week",3,"once a week",4,1
+"281",29,"Balisto",5,1,4,4,2,4,3.42105263157895,4,4,5,2,2,2,"male",28,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","1-3 times a week",3,"once a week",4,1
+"282",29,"Bounty",4,2,5,5,1,5,3.53488372093023,3,5,5,5,4,2,"male",28,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","1-3 times a week",3,"once a week",4,1
+"283",29,"Duplo",4,2,4,4,1,4,3.09302325581395,3,4,4,4,4,4,"male",28,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","1-3 times a week",3,"once a week",4,1
+"284",29,"KinderBueno",5,4,5,5,1,4,3.47619047619048,3,5,5,5,5,5,"male",28,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","1-3 times a week",3,"once a week",4,1
+"285",29,"KinderRiegel",1,4,5,5,1,5,3.44444444444444,3,5,5,5,3,4,"male",28,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","1-3 times a week",3,"once a week",4,1
+"286",29,"KitKat",5,2,5,4,1,5,3.26666666666667,3,5,5,5,5,5,"male",28,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","1-3 times a week",3,"once a week",4,1
+"287",29,"Lion",4,2,4,4,1,5,3.82051282051282,4,5,5,3,2,1,"male",28,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","1-3 times a week",3,"once a week",4,1
+"288",29,"Mars",1,5,5,5,1,5,3.66666666666667,3,5,5,5,5,5,"male",28,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","1-3 times a week",3,"once a week",4,1
+"289",29,"Snickers",5,2,5,5,1,5,3.6,3,3,5,5,5,5,"male",28,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","1-3 times a week",3,"once a week",4,1
+"290",29,"Twix",5,2,5,5,1,5,3.57777777777778,3,5,5,5,5,5,"male",28,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","1-3 times a week",3,"once a week",4,1
+"291",30,"Balisto",5,1,5,5,1,5,5,5,3,5,4,3,3,"female",27,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"less than once a month",2,1
+"292",30,"Bounty",1,5,5,5,1,5,5,5,5,5,5,3,3,"female",27,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"less than once a month",2,1
+"293",30,"Duplo",5,1,5,5,1,5,1,1,3,5,2,5,5,"female",27,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"less than once a month",2,1
+"294",30,"KinderBueno",5,5,5,5,1,5,5,5,5,5,5,4,4,"female",27,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"less than once a month",2,1
+"295",30,"KinderRiegel",1,5,5,5,1,5,5,5,5,5,5,5,5,"female",27,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"less than once a month",2,1
+"296",30,"KitKat",5,1,5,5,1,5,5,5,3,5,4,3,3,"female",27,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"less than once a month",2,1
+"297",30,"Lion",5,5,5,5,1,5,5,5,5,5,5,4,4,"female",27,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"less than once a month",2,1
+"298",30,"Mars",1,5,5,5,1,5,5,5,5,5,5,5,5,"female",27,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"less than once a month",2,1
+"299",30,"Snickers",2,4,5,5,1,5,5,4,5,5,3,5,5,"female",27,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"less than once a month",2,1
+"300",30,"Twix",5,5,5,5,1,5,5,3,4,5,4,3,3,"female",27,"I am an employee.","single","0","City","Berlin","1-3 times a week",3,"less than once a month",2,1
+"301",31,"Balisto",4,3,5,5,1,5,3,3,2,3,2,2,2,"female",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"5-7 times per week",6,1
+"302",31,"Bounty",4,3,5,4,1,5,3,3,4,4,3,3,3,"female",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"5-7 times per week",6,1
+"303",31,"Duplo",5,4,5,5,1,5,3,3,4,3,3,4,4,"female",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"5-7 times per week",6,1
+"304",31,"KinderBueno",5,5,5,3,1,5,3,3,4,4,4,4,4,"female",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"5-7 times per week",6,1
+"305",31,"KinderRiegel",2,5,5,5,1,5,3,4,5,5,4,5,5,"female",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"5-7 times per week",6,1
+"306",31,"KitKat",5,2,5,4,1,5,3,3,4,4,3,4,3,"female",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"5-7 times per week",6,1
+"307",31,"Lion",4,4,5,5,1,5,3,3,2,4,3,2,1,"female",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"5-7 times per week",6,1
+"308",31,"Mars",3,4,5,5,1,5,3,3,4,4,3,4,3,"female",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"5-7 times per week",6,1
+"309",31,"Snickers",5,4,5,5,1,5,3,3,4,4,3,4,4,"female",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"5-7 times per week",6,1
+"310",31,"Twix",5,4,5,4,1,5,3,3,4,4,2,4,2,"female",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"5-7 times per week",6,1
+"311",32,"Balisto",5,1,4,3,1,5,3,4,4,5,5,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","4-7 times a week",4,"once a week",4,1
+"312",32,"Bounty",1,1,5,2,1,5,3,2,5,5,3,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","4-7 times a week",4,"once a week",4,1
+"313",32,"Duplo",5,3,5,5,1,5,3,5,5,5,4,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","4-7 times a week",4,"once a week",4,1
+"314",32,"KinderBueno",4,5,5,4,1,5,3,4,5,5,4,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","4-7 times a week",4,"once a week",4,1
+"315",32,"KinderRiegel",1,3,5,4,1,5,3,4,5,5,4,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","4-7 times a week",4,"once a week",4,1
+"316",32,"KitKat",5,1,5,3,1,5,3,3,5,5,3,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","4-7 times a week",4,"once a week",4,1
+"317",32,"Lion",4,2,5,4,1,5,3,4,5,5,1,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","4-7 times a week",4,"once a week",4,1
+"318",32,"Mars",1,3,5,3,1,5,3,1,5,5,3,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","4-7 times a week",4,"once a week",4,1
+"319",32,"Snickers",4,3,5,4,1,5,3,4,5,5,1,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","4-7 times a week",4,"once a week",4,1
+"320",32,"Twix",4,1,5,3,1,5,3,3,5,5,3,5,5,"female",26,"I am an employee.","in a relationship","0","City","Berlin","4-7 times a week",4,"once a week",4,1
+"321",33,"Balisto",4,2,2,4,4,4,2,4,2,4,2,2,2,"male",24,"I am a student.","single","0","City","Niedersachsen","1-3 times a week",3,"once a month",3,1
+"322",33,"Bounty",2,2,4,4,2,4,2,4,4,4,4,2,2,"male",24,"I am a student.","single","0","City","Niedersachsen","1-3 times a week",3,"once a month",3,1
+"323",33,"Duplo",5,2,5,5,2,4,2,4,4,4,4,4,4,"male",24,"I am a student.","single","0","City","Niedersachsen","1-3 times a week",3,"once a month",3,1
+"324",33,"KinderBueno",3,4,4,4,1,4,3.47619047619048,4,4,4,4,4,4,"male",24,"I am a student.","single","0","City","Niedersachsen","1-3 times a week",3,"once a month",3,1
+"325",33,"KinderRiegel",1,5,5,5,1,4,2,4,4,4,4,4,4,"male",24,"I am a student.","single","0","City","Niedersachsen","1-3 times a week",3,"once a month",3,1
+"326",33,"KitKat",5,2,4,4,2,4,2,3,4,4,4,4,4,"male",24,"I am a student.","single","0","City","Niedersachsen","1-3 times a week",3,"once a month",3,1
+"327",33,"Lion",5,2,4,4,2,4,2,3,4,4,4,4,4,"male",24,"I am a student.","single","0","City","Niedersachsen","1-3 times a week",3,"once a month",3,1
+"328",33,"Mars",1,5,5,4,2,4,2,4,4,4,4,4,4,"male",24,"I am a student.","single","0","City","Niedersachsen","1-3 times a week",3,"once a month",3,1
+"329",33,"Snickers",3,2,4,3,1,4,1,2,4,4,3,4,4,"male",24,"I am a student.","single","0","City","Niedersachsen","1-3 times a week",3,"once a month",3,1
+"330",33,"Twix",5,4,4,4,1,1,1,2,4,4,4,4,4,"male",24,"I am a student.","single","0","City","Niedersachsen","1-3 times a week",3,"once a month",3,1
+"331",34,"Balisto",4.46511627906977,1.90697674418605,4.04545454545455,3.86363636363636,2.27906976744186,4.09302325581395,3.42105263157895,2.92105263157895,3.48717948717949,4,3.41463414634146,3.16279069767442,3.17948717948718,"male",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"332",34,"Bounty",3,3,4,2,3,2,3,2,3,3,4,2,1,"male",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"333",34,"Duplo",4,2,3,3,2,4,3,2,2,3,3,2,2,"male",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"334",34,"KinderBueno",4,4,4,3,2,4,3.47619047619048,2,2,2,2,2,1,"male",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"335",34,"KinderRiegel",1,4,5,4,2,4,3,4,4,4,4,4,3,"male",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"336",34,"KitKat",5,2,4,4,2,3,3,3,4,3,3,4,3,"male",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"337",34,"Lion",4,3,4,4,3,4,3,2,3,3,4,3,4,"male",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"338",34,"Mars",3,4,5,4,2,4,3,2,4,4,3,2,2,"male",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"339",34,"Snickers",4,4,4,4,3,4,3,3,4,4,4,5,5,"male",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"340",34,"Twix",4,3,4,3,3,4,3,2,4,2,3,4,5,"male",26,"I am a student.","single","0","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"341",35,"Balisto",4,3,5,5,3,5,3.42105263157895,2.92105263157895,3.48717948717949,5,3.41463414634146,3,4,"female",22,"I am an employee.","in a relationship","0","City","Bayern","1-3 times a week",3,"once a week",4,3
+"342",35,"Bounty",2,4,5,3,1,5,3.53488372093023,3.04878048780488,4.02272727272727,5,3.91111111111111,3.4468085106383,2.9047619047619,"female",22,"I am an employee.","in a relationship","0","City","Bayern","1-3 times a week",3,"once a week",4,3
+"343",35,"Duplo",3,1,5,5,2,5,3.09302325581395,3.26666666666667,3.97872340425532,5,3.5531914893617,5,5,"female",22,"I am an employee.","in a relationship","0","City","Bayern","1-3 times a week",3,"once a week",4,3
+"344",35,"KinderBueno",3,4,4,3,1.48888888888889,5,3.47619047619048,3.62222222222222,3.83333333333333,5,3.72916666666667,3,3,"female",22,"I am an employee.","in a relationship","0","City","Bayern","1-3 times a week",3,"once a week",4,3
+"345",35,"KinderRiegel",2,4,5,5,1.6875,5,3.44444444444444,4.02222222222222,4.46808510638298,5,4,4,4,"female",22,"I am an employee.","in a relationship","0","City","Bayern","1-3 times a week",3,"once a week",4,3
+"346",35,"KitKat",4,2,5,5,1.56521739130435,5,3.26666666666667,3.15555555555556,4.14583333333333,5,3.53191489361702,3,3,"female",22,"I am an employee.","in a relationship","0","City","Bayern","1-3 times a week",3,"once a week",4,3
+"347",35,"Lion",5,4,5,4,1,5,3.82051282051282,3.25,3.8,5,3.55,3,3,"female",22,"I am an employee.","in a relationship","0","City","Bayern","1-3 times a week",3,"once a week",4,3
+"348",35,"Mars",1,5,5,2,1.45652173913043,5,3.66666666666667,2.89130434782609,4.25,5,3.48936170212766,2,3,"female",22,"I am an employee.","in a relationship","0","City","Bayern","1-3 times a week",3,"once a week",4,3
+"349",35,"Snickers",4,3,4,4,1.42222222222222,5,3.6,2.93181818181818,4.34782608695652,5,3.27659574468085,5,5,"female",22,"I am an employee.","in a relationship","0","City","Bayern","1-3 times a week",3,"once a week",4,3
+"350",35,"Twix",3,5,5,3,1.51063829787234,5,3.57777777777778,3.28260869565217,4.27659574468085,5,3.59574468085106,3,3,"female",22,"I am an employee.","in a relationship","0","City","Bayern","1-3 times a week",3,"once a week",4,3
+"351",36,"Balisto",4,2,3,4,2,3,3,4,2,4,4,2,2,"female",27,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"once a week",4,1
+"352",36,"Bounty",2,4,5,4,1,4,5,3,3,3,4,2,2,"female",27,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"once a week",4,1
+"353",36,"Duplo",4,2,4,4,1,4,3,3,3,4,3,3,4,"female",27,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"once a week",4,1
+"354",36,"KinderBueno",3,4,5,3,1,4,4,5,4,3,4,3,2,"female",27,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"once a week",4,1
+"355",36,"KinderRiegel",2,2,4,5,1,3,3,4,4,4,4,3,3,"female",27,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"once a week",4,1
+"356",36,"KitKat",4,2,4,4,1,3,3,4,3,4,3,2,2,"female",27,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"once a week",4,1
+"357",36,"Lion",4,3,5,3,1,4,4,2,3,3,2,2,2,"female",27,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"once a week",4,1
+"358",36,"Mars",2,4,5,4,1,4,4,2,4,3,2,3,3,"female",27,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"once a week",4,1
+"359",36,"Snickers",4,4,5,3,1,4,4,3,4,4,3,5,5,"female",27,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"once a week",4,1
+"360",36,"Twix",4,3,5,4,1,4,4,3,4,3,3,2,4,"female",27,"I am an employee.","in a relationship","0","City","Nordrhein-Westfalen","less than once a week",2,"once a week",4,1
+"361",37,"Balisto",4,2,3,4,3,4,4,2,3.48717948717949,4,4,2,2,"female",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"362",37,"Bounty",2,4,4,4,4,4,4,4,4,3,4,3,2.9047619047619,"female",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"363",37,"Duplo",4,2,4,5,3,4,2,2,4,4,4,4,4,"female",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"364",37,"KinderBueno",4,5,4,4,3,3,4,5,2,4,4,2,3,"female",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"365",37,"KinderRiegel",2,4,4,4,3,3,3,5,4,4,4,4,4.4468085106383,"female",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"366",37,"KitKat",4,2,2,4,2,3,3,3,4,4,4,4,5,"female",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"367",37,"Lion",4,2,5,5,2,4,4,2,3,2,4,1,1,"female",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"368",37,"Mars",1,4,5,4,1,5,4,1,5,3,1,4,4,"female",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"369",37,"Snickers",2,4,5,3,2,5,5,2,5,4,2,4,4,"female",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"370",37,"Twix",2,3,4,4,2,4,4,2,4,4,4,4,4,"female",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"371",38,"Balisto",5,2,5,4,1,5,4,4,5,3,3,3,2,"female",28,"I am self-employed.","in a relationship","0","City","Hamburg","4-7 times a week",4,"5-7 times per week",6,3
+"372",38,"Bounty",3,4,5,4,1,5,4,4,5,3,4,4,3,"female",28,"I am self-employed.","in a relationship","0","City","Hamburg","4-7 times a week",4,"5-7 times per week",6,3
+"373",38,"Duplo",4,3,5,4,1,5,4,3,5,3,4,1,5,"female",28,"I am self-employed.","in a relationship","0","City","Hamburg","4-7 times a week",4,"5-7 times per week",6,3
+"374",38,"KinderBueno",5,5,5,4,1.48888888888889,5,4,5,4,5,4,2,3,"female",28,"I am self-employed.","in a relationship","0","City","Hamburg","4-7 times a week",4,"5-7 times per week",6,3
+"375",38,"KinderRiegel",3,3,5,4,1,5,4,5,5,5,3,5,5,"female",28,"I am self-employed.","in a relationship","0","City","Hamburg","4-7 times a week",4,"5-7 times per week",6,3
+"376",38,"KitKat",5,3,5,5,1,5,5,3,5,4,3,3,4,"female",28,"I am self-employed.","in a relationship","0","City","Hamburg","4-7 times a week",4,"5-7 times per week",6,3
+"377",38,"Lion",4,4,5,5,1,5,4,4,5,3,3,3.4390243902439,4,"female",28,"I am self-employed.","in a relationship","0","City","Hamburg","4-7 times a week",4,"5-7 times per week",6,3
+"378",38,"Mars",1,4,5,4,1,5,4,2,5,3,3,4.16326530612245,3.97826086956522,"female",28,"I am self-employed.","in a relationship","0","City","Hamburg","4-7 times a week",4,"5-7 times per week",6,3
+"379",38,"Snickers",3,4,5,5,1.42222222222222,5,5,5,5,4,2,4,2,"female",28,"I am self-employed.","in a relationship","0","City","Hamburg","4-7 times a week",4,"5-7 times per week",6,3
+"380",38,"Twix",5,3,5,4,1,5,4,5,5,4,3,4,5,"female",28,"I am self-employed.","in a relationship","0","City","Hamburg","4-7 times a week",4,"5-7 times per week",6,3
+"381",39,"Balisto",4,2,5,5,2,5,3,4,3,4,3,4,5,"male",24,"I am a student.","in a relationship","0","City","Hessen","4-7 times a week",4,"once a week",4,1
+"382",39,"Bounty",2,2,5,5,2,4,3,4,3,5,3,4,4,"male",24,"I am a student.","in a relationship","0","City","Hessen","4-7 times a week",4,"once a week",4,1
+"383",39,"Duplo",4,4,5,5,3,5,3,4,3,4,3,5,5,"male",24,"I am a student.","in a relationship","0","City","Hessen","4-7 times a week",4,"once a week",4,1
+"384",39,"KinderBueno",3,4,4,4,1,5,3,4,3,4,3,5,5,"male",24,"I am a student.","in a relationship","0","City","Hessen","4-7 times a week",4,"once a week",4,1
+"385",39,"KinderRiegel",2,4,5,5,2,4,3,4,3,5,3,5,5,"male",24,"I am a student.","in a relationship","0","City","Hessen","4-7 times a week",4,"once a week",4,1
+"386",39,"KitKat",5,3,5,5,1,5,3,4,3,4,3,5,5,"male",24,"I am a student.","in a relationship","0","City","Hessen","4-7 times a week",4,"once a week",4,1
+"387",39,"Lion",4,4,5,5,2,5,3,5,3,4,3,4,5,"male",24,"I am a student.","in a relationship","0","City","Hessen","4-7 times a week",4,"once a week",4,1
+"388",39,"Mars",2,5,5,5,1,5,3,3,3,4,3,5,5,"male",24,"I am a student.","in a relationship","0","City","Hessen","4-7 times a week",4,"once a week",4,1
+"389",39,"Snickers",3,3,5,5,1,5,3,3,3,4,3,5,5,"male",24,"I am a student.","in a relationship","0","City","Hessen","4-7 times a week",4,"once a week",4,1
+"390",39,"Twix",4,3,5,5,1,5,3,5,3,4,3,5,5,"male",24,"I am a student.","in a relationship","0","City","Hessen","4-7 times a week",4,"once a week",4,1
+"391",40,"Balisto",4,3,3,3,1,4,3,3,3,3,3,3,4,"male",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"2-4 times per week",5,1
+"392",40,"Bounty",2,3,4,4,1,4,3,3,3,3,3,3,4,"male",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"2-4 times per week",5,1
+"393",40,"Duplo",4,3,3,4,1,4,3,3,3,3,3,5,5,"male",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"2-4 times per week",5,1
+"394",40,"KinderBueno",4,5,4,4,1,3,3,3,3,3,4,3,4,"male",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"2-4 times per week",5,1
+"395",40,"KinderRiegel",2,3,4,4,1,4,3,3,4,3,4,4,4,"male",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"2-4 times per week",5,1
+"396",40,"KitKat",5,3,3,4,1,4,3,3,4,3,3,4,4,"male",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"2-4 times per week",5,1
+"397",40,"Lion",4,3,4,4,1,5,4,3,3,3,3,4,4,"male",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"2-4 times per week",5,1
+"398",40,"Mars",2,5,5,4,1,5,4,3,4,3,3,5,5,"male",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"2-4 times per week",5,1
+"399",40,"Snickers",4,3,4,4,2,5,4,3,5,3,3,5,5,"male",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"2-4 times per week",5,1
+"400",40,"Twix",4,4,5,4,1,4,4,3,4,3,4,4,4,"male",28,"I am an employee.","single","0","City","Niedersachsen","1-3 times a week",3,"2-4 times per week",5,1
+"401",41,"Balisto",3,1,4,4,2.27906976744186,4,3.42105263157895,2.92105263157895,3.48717948717949,4,3.41463414634146,3,5,"female",25,"I am a student.","single","0","City","Hessen","less than once a week",2,"2-4 times per week",5,2
+"402",41,"Bounty",1,2,5,4,1.65957446808511,4,3.53488372093023,3.04878048780488,4.02272727272727,4,3.91111111111111,3,1,"female",25,"I am a student.","single","0","City","Hessen","less than once a week",2,"2-4 times per week",5,2
+"403",41,"Duplo",2,2,4,4,1.63265306122449,4,3.09302325581395,3.26666666666667,3.97872340425532,5,3.5531914893617,1,5,"female",25,"I am a student.","single","0","City","Hessen","less than once a week",2,"2-4 times per week",5,2
+"404",41,"KinderBueno",2,4,4,4,3,5,3.47619047619048,3.62222222222222,3.83333333333333,4,3.72916666666667,1,4,"female",25,"I am a student.","single","0","City","Hessen","less than once a week",2,"2-4 times per week",5,2
+"405",41,"KinderRiegel",1,2,4,5,1.6875,4,3.44444444444444,4.02222222222222,4.46808510638298,5,4,2,5,"female",25,"I am a student.","single","0","City","Hessen","less than once a week",2,"2-4 times per week",5,2
+"406",41,"KitKat",4,2,4,5,1.56521739130435,4,3.26666666666667,3.15555555555556,4.14583333333333,3,3.53191489361702,3,3,"female",25,"I am a student.","single","0","City","Hessen","less than once a week",2,"2-4 times per week",5,2
+"407",41,"Lion",4.18604651162791,3.37209302325581,4.56818181818182,4.04651162790698,1.56818181818182,4.63636363636364,3.82051282051282,3.25,3.8,4,3.55,3.4390243902439,1,"female",25,"I am a student.","single","0","City","Hessen","less than once a week",2,"2-4 times per week",5,2
+"408",41,"Mars",1,5,5,5,1.45652173913043,5,3.66666666666667,2.89130434782609,4.25,4,3.48936170212766,3,3,"female",25,"I am a student.","single","0","City","Hessen","less than once a week",2,"2-4 times per week",5,2
+"409",41,"Snickers",4,2,5,4,2,5,3.6,2.93181818181818,4.34782608695652,4,3.27659574468085,2,4,"female",25,"I am a student.","single","0","City","Hessen","less than once a week",2,"2-4 times per week",5,2
+"410",41,"Twix",3,3,5,4,1.51063829787234,5,3.57777777777778,3.28260869565217,4.27659574468085,4,3.59574468085106,3,5,"female",25,"I am a student.","single","0","City","Hessen","less than once a week",2,"2-4 times per week",5,2
+"411",42,"Balisto",5,2,5,5,3,2,2,2,5,5,5,5,5,"female",27,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"412",42,"Bounty",1,3,5,1,2,5,1,1,5,4,5,4,4,"female",27,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"413",42,"Duplo",5,5,5,3,5,5,3,5,5,4,4,5,5,"female",27,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"414",42,"KinderBueno",5,5,5,5,1.48888888888889,5,5,5,5,5,5,5,5,"female",27,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"415",42,"KinderRiegel",1,5,5,3,1,5,5,4,5,4,5,5,5,"female",27,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"416",42,"KitKat",5,5,5,5,5,4,4,4,5,5,4,5,5,"female",27,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"417",42,"Lion",5,5,5,3,3,5,5,5,5,5,5,5,5,"female",27,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"418",42,"Mars",2,5,5,5,5,2,4,5,5,3,3,4,4,"female",27,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"419",42,"Snickers",4,3,5,4,1.42222222222222,4.60416666666667,1,1,5,4,4,4,4,"female",27,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"420",42,"Twix",5,5,5,4,4,5,5,5,5,5,5,2,5,"female",27,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"2-4 times per week",5,1
+"421",43,"Balisto",4.46511627906977,1.90697674418605,5,3,1,5,3.42105263157895,2.92105263157895,3.48717948717949,4,2,3.16279069767442,3.17948717948718,"male",29,"I am an employee.","single","0","City","Berlin","4-7 times a week",4,"never",1,2
+"422",43,"Bounty",1,3,5,2,1,5,4,3.04878048780488,4,4,4,4,4,"male",29,"I am an employee.","single","0","City","Berlin","4-7 times a week",4,"never",1,2
+"423",43,"Duplo",1,2,5,4,1,5,3.09302325581395,3.26666666666667,4,4,3,4,4,"male",29,"I am an employee.","single","0","City","Berlin","4-7 times a week",4,"never",1,2
+"424",43,"KinderBueno",3.77083333333333,4,4,2,1,5,5,3.62222222222222,4,4,3,2,3,"male",29,"I am an employee.","single","0","City","Berlin","4-7 times a week",4,"never",1,2
+"425",43,"KinderRiegel",1,3,5,4,1,5,5,4.02222222222222,4,4,3,4,4.4468085106383,"male",29,"I am an employee.","single","0","City","Berlin","4-7 times a week",4,"never",1,2
+"426",43,"KitKat",2,2,5,4,1,5,4,3.15555555555556,4,3,3,4,3.89583333333333,"male",29,"I am an employee.","single","0","City","Berlin","4-7 times a week",4,"never",1,2
+"427",43,"Lion",4.18604651162791,3.37209302325581,5,4.04651162790698,1,5,3.82051282051282,3.25,3.8,4,3.55,3.4390243902439,3.20512820512821,"male",29,"I am an employee.","single","0","City","Berlin","4-7 times a week",4,"never",1,2
+"428",43,"Mars",2,4,5,3,1,5,5,2.89130434782609,4,4,4,5,3.97826086956522,"male",29,"I am an employee.","single","0","City","Berlin","4-7 times a week",4,"never",1,2
+"429",43,"Snickers",3.58333333333333,2,5,3.95833333333333,1,5,5,2.93181818181818,4,4,3,3,4.34782608695652,"male",29,"I am an employee.","single","0","City","Berlin","4-7 times a week",4,"never",1,2
+"430",43,"Twix",2,2,5,3,1,5,4,3.28260869565217,4,4,3,4,4,"male",29,"I am an employee.","single","0","City","Berlin","4-7 times a week",4,"never",1,2
+"431",44,"Balisto",5,3,4,4,2,4.09302325581395,3,4,5,5,3,3,3,"male",24,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a month",3,1
+"432",44,"Bounty",2,4,5,4,1,5,5,3,5,5,4,3,2,"male",24,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a month",3,1
+"433",44,"Duplo",4,1,5,5,1,4,4,3,4,4,3,3,4,"male",24,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a month",3,1
+"434",44,"KinderBueno",4,4,4,4,1,5,3,4,5,4,3,2,2,"male",24,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a month",3,1
+"435",44,"KinderRiegel",1,5,5,5,1,5,3,3,5,5,3,3,3,"male",24,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a month",3,1
+"436",44,"KitKat",5,1,4,4,1,5,5,4,5,3,3,3,2,"male",24,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a month",3,1
+"437",44,"Lion",5,4,5,5,1,5,5,5,5,5,5,3,4,"male",24,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a month",3,1
+"438",44,"Mars",1,3,5,4,1,5,5,2,5,5,3,3,3,"male",24,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a month",3,1
+"439",44,"Snickers",4,3,4,4,1,5,5,3,5,5,3,4,5,"male",24,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a month",3,1
+"440",44,"Twix",5,3,5,5,1,5,4,5,5,5,3,3,4,"male",24,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a month",3,1
+"441",45,"Balisto",4.46511627906977,1.90697674418605,4.04545454545455,3.86363636363636,2.27906976744186,4.09302325581395,3.42105263157895,2.92105263157895,3.48717948717949,4,3.41463414634146,3.16279069767442,3.17948717948718,"male",28,"I am a student.","in a relationship","1","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"442",45,"Bounty",4,5,5,4,1,4,3,2,4,4,3,3,2,"male",28,"I am a student.","in a relationship","1","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"443",45,"Duplo",3,4,4,4,1,3,2,3,4,4,2,3,3,"male",28,"I am a student.","in a relationship","1","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"444",45,"KinderBueno",2,5,5,4,1,4,3,1,4,4,3,3,3,"male",28,"I am a student.","in a relationship","1","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"445",45,"KinderRiegel",2,5,5,5,1,4,2,3,4,3,2,4,4,"male",28,"I am a student.","in a relationship","1","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"446",45,"KitKat",4,3,4,4,1,3,3,2,4,2,3,3,3,"male",28,"I am a student.","in a relationship","1","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"447",45,"Lion",4.18604651162791,3.37209302325581,4.56818181818182,4.04651162790698,1.56818181818182,4.63636363636364,3.82051282051282,3.25,3.8,4,3.55,3.4390243902439,3.20512820512821,"male",28,"I am a student.","in a relationship","1","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"448",45,"Mars",3,4,5,5,1,5,3,4,4,4,3,4,4,"male",28,"I am a student.","in a relationship","1","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"449",45,"Snickers",4,3.4375,2,3,1,5,3,1,5,4,3,3,2,"male",28,"I am a student.","in a relationship","1","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"450",45,"Twix",4,3,4,4,1,4,3,3,4,3,3,3,4,"male",28,"I am a student.","in a relationship","1","City","Sachsen-Anhalt","1-3 times a week",3,"once a week",4,2
+"451",46,"Balisto",4,3,4,4,1,5,3,3,3,4,3,4,3,"male",27,"I am a student.","single","0","City","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"452",46,"Bounty",2,3,4,4,1,5,4,4,4,4,3,4,4,"male",27,"I am a student.","single","0","City","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"453",46,"Duplo",4,2,4,4,1,5,3,3,3,3,3,4,5,"male",27,"I am a student.","single","0","City","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"454",46,"KinderBueno",3,4,4,4,1,5,3,3,3,3,3,4,3,"male",27,"I am a student.","single","0","City","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"455",46,"KinderRiegel",1,4,5,5,1,5,3,4,4,3,3,5,5,"male",27,"I am a student.","single","0","City","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"456",46,"KitKat",4,2,4,3,1,5,3,3,3,3,3,4,4,"male",27,"I am a student.","single","0","City","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"457",46,"Lion",4,2,4,3,1,5,4,4,3,4,3,5,4,"male",27,"I am a student.","single","0","City","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"458",46,"Mars",2,4,4,3,1,5,3,3,3,3,3,5,5,"male",27,"I am a student.","single","0","City","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"459",46,"Snickers",4,4,4,4,1,5,3,3,3,4,3,4,5,"male",27,"I am a student.","single","0","City","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"460",46,"Twix",4,3,4,3,1,5,3,3,3,3,3,5,4,"male",27,"I am a student.","single","0","City","Sachsen-Anhalt","4-7 times a week",4,"once a week",4,1
+"461",47,"Balisto",4,1,5,3,1,5,4,2.92105263157895,3.48717948717949,4,3,2,3.17948717948718,"female",24,"I am a student.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"462",47,"Bounty",1.97872340425532,3.21276595744681,4,2,1,4,3,3.04878048780488,4.02272727272727,4,4,4,4,"female",24,"I am a student.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"463",47,"Duplo",4,1,5,4,1,5,3,4,4,4,3,5,5,"female",24,"I am a student.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"464",47,"KinderBueno",4,4,5,4,1,5,3,4,4,3,4,4,4,"female",24,"I am a student.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"465",47,"KinderRiegel",1,4,5,5,1,5,3,4,4,4,4,4,4,"female",24,"I am a student.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"466",47,"KitKat",5,1,5,4,1,4,3,3,4,4,3,4,4,"female",24,"I am a student.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"467",47,"Lion",4,1,5,4,1,5,4,4,3,4,3,4,3.20512820512821,"female",24,"I am a student.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"468",47,"Mars",1,5,5,4,1,5,4,4,4,4,3,4,4,"female",24,"I am a student.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"469",47,"Snickers",3,3,5,4,1,5,5,4,5,5,3,4,4,"female",24,"I am a student.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"470",47,"Twix",5,2,5,4,1,5,4,4,4,4,3,4,4,"female",24,"I am a student.","in a relationship","0","City","Berlin","1-3 times a week",3,"once a week",4,3
+"471",48,"Balisto",5,1,3,3,3,3,4,4,4,3,4,4,3,"male",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,1
+"472",48,"Bounty",2,3,3,3,1,4,4,4,4,4,4,3,2,"male",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,1
+"473",48,"Duplo",4,3,4,4,2,4,4,4,4,4,4,5,5,"male",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,1
+"474",48,"KinderBueno",2,4,4,3,1,4,3,4,4,4,4,2,2,"male",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,1
+"475",48,"KinderRiegel",1,4,5,3,2,4,4,5,4,5,4,5,5,"male",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,1
+"476",48,"KitKat",5,1,3,3,2,4,4,3,4,3,4,5,4,"male",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,1
+"477",48,"Lion",5,2,4,3,2,4,3,3,4,4,4,3,2,"male",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,1
+"478",48,"Mars",1,4,5,4,2,4,2,3,4,4,4,5,3,"male",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,1
+"479",48,"Snickers",3,3,4,4,1,4,4,3,5,4,3,5,5,"male",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,1
+"480",48,"Twix",4,4,4,3,1,4,4,4,4,3,4,4,5,"male",26,"I am a student.","single","0","City","Berlin","1-3 times a week",3,"once a week",4,1
+"481",49,"Balisto",5,1,5,5,3,4,4,2,5,5,4,4,4,"male",27,"I am an employee.","in a relationship","0","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,1
+"482",49,"Bounty",1,5,5,5,2,4,4,4,4,4,4,5,3,"male",27,"I am an employee.","in a relationship","0","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,1
+"483",49,"Duplo",5,3,5,5,2,4,4,5,5,5,3,3,5,"male",27,"I am an employee.","in a relationship","0","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,1
+"484",49,"KinderBueno",5,5,5,5,2,4,4,4,5,2,4,5,5,"male",27,"I am an employee.","in a relationship","0","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,1
+"485",49,"KinderRiegel",1,5,5,5,3,3,4,4,5,5,4,5,5,"male",27,"I am an employee.","in a relationship","0","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,1
+"486",49,"KitKat",5,2,5,5,2,4,4,5,5,5,5,5,5,"male",27,"I am an employee.","in a relationship","0","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,1
+"487",49,"Lion",5,5,5,5,4,4,4,5,5,5,3,5,5,"male",27,"I am an employee.","in a relationship","0","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,1
+"488",49,"Mars",1,5,5,5,1,4,4,1,5,5,5,5,5,"male",27,"I am an employee.","in a relationship","0","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,1
+"489",49,"Snickers",5,5,5,5,2,4,4,4,5,4,5,5,5,"male",27,"I am an employee.","in a relationship","0","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,1
+"490",49,"Twix",5,5,5,5,2,4,4,4,4,5,5,5,5,"male",27,"I am an employee.","in a relationship","0","City","Sachsen-Anhalt","4-7 times a week",4,"2-4 times per week",5,1
+"491",50,"Balisto",5,1,3,3,4,2,2,2,4,2,2,3.16279069767442,3.17948717948718,"female",26,"I am a student.","single","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,3
+"492",50,"Bounty",1,4,3,2,3,3,4,2,4,2,4,5,2.9047619047619,"female",26,"I am a student.","single","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,3
+"493",50,"Duplo",5,1,5,4,2,3,2,2,4,4,3,5,5,"female",26,"I am a student.","single","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,3
+"494",50,"KinderBueno",5,5,5,3,3,4,4,4,5,5,3,5,3,"female",26,"I am a student.","single","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,3
+"495",50,"KinderRiegel",1,4,5,4,2,3,4,5,5,5,4,5,5,"female",26,"I am a student.","single","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,3
+"496",50,"KitKat",5,1,4,3,2,4,3,2,5,2,2,4,4,"female",26,"I am a student.","single","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,3
+"497",50,"Lion",5,2,5,3,1,5,5,2,4,2,3,3.4390243902439,3.20512820512821,"female",26,"I am a student.","single","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,3
+"498",50,"Mars",1,5,5,5,1,5,5,3,5,3,3,5,5,"female",26,"I am a student.","single","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,3
+"499",50,"Snickers",2,2,4,4,2,4,4,2,5,5,4,5,5,"female",26,"I am a student.","single","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,3
+"500",50,"Twix",3,2,5,3,2,4,3,2,5,5,3,5,5,"female",26,"I am a student.","single","0","City","Berlin","4-7 times a week",4,"2-4 times per week",5,3
